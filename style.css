@@ -1,0 +1,546 @@
+/* CONTAINER & HEADER */
+.course-details-page,
+.course-details-page * {
+  box-sizing: border-box;
+}
+.course-details-page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-header {
+  border-style: solid;
+  border-color: var(--labels-vibrant-controls-tertiary, #d9d9d9);
+  border-width: 0 0 1px 0;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  height: 62px;
+  position: relative;
+}
+
+.header-nav {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 802px;
+  height: 62px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+  padding: 10px;
+}
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+.nav-links li { 
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.nav-link {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+.user-menu {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center; 
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.user-course-link {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  padding: 10px;
+}
+.user-avatar {
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  aspect-ratio: 1;
+  padding: 5px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  position: relative;
+}
+
+/* COURSE INFO (LEFT COLUMN) */
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  width: 667px;
+}
+.course-breadcrumb {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.course-description {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  width: 612px;
+}
+
+/* COURSE METADATA (Grid trên <dl>) */
+.course-meta-group {
+  display: grid;
+  grid-template-columns: 250px 1fr; 
+  gap: 15px 30px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.meta-item { /* Thẻ <dt> */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  height: 24px;
+}
+.meta-icon {
+  width: 15px;
+  height: 15px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.meta-name,
+.meta-value { /* Thẻ <dd> */
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+
+/* LEARNING GOALS */
+.learning-goals {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 667px;
+  position: relative;
+}
+.section-title {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.goal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 612px;
+  position: relative;
+}
+.goal-title { /* h3 là Flex container cho icon và text */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  width: 100%;
+}
+.check-icon {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.goal-description {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+/* COURSE OUTLINE */
+.course-outline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 654px;
+  position: relative;
+}
+.outline-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  position: relative;
+}
+.outline-summary {
+  color: #000000;
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+.summary-regular {
+  font-family: "Inter-Regular", sans-serif;
+}
+.expand-button {
+  color: var(--p2, #654534);
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+
+/* CHAPTERS LIST (ACCORDION) */
+.chapters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.chapter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.chapter-header {
+  background: var(--p5, #fff5e5);
+  border-radius: 5px;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  position: relative;
+  cursor: pointer;
+}
+.chapter-name { /* h3 là Flex container cho icon và text */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+.plus-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  aspect-ratio: 1;
+}
+.lesson-count {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+
+/* LESSON LIST */
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.lesson-item {
+  border-style: solid;
+  border-color: var(--labels-vibrant-controls-tertiary, #d9d9d9);
+  border-width: 0 0 0.5px 0;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  position: relative;
+}
+.lesson-name,
+.lesson-duration {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+
+/* SIDEBAR (RIGHT COLUMN) */
+.course-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 390px;
+  position: relative;
+}
+.video-box {
+  background: #d9d9d9;
+  border-radius: 10px;
+  align-self: stretch;
+  height: 225px;
+  position: relative;
+}
+.register-button {
+  background: var(--p1, #3d322c);
+  border-radius: 5px;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+.register-text {
+  color: var(--p5, #fff5e5);
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+.main-footer {
+  background: var(--p1, #3d322c);
+  padding: 30px 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  padding-bottom: 30px;
+  position: relative;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.logo-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.logo-group .logo-icon {
+  width: 30px;
+  height: 30px;
+}
+.logo-text,
+.col-title {
+  color: var(--p5, #fff5e5);
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tagline {
+  color: var(--p5, #fff5e5);
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  position: relative;
+}
+.footer-link,
+.contact-text {
+  color: var(--p5, #fff5e5);
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.copyright {
+  border-style: solid;
+  border-color: var(--p2, #654534);
+  border-width: 1px 0 0 0;
+  padding: 10px 0;
+  color: var(--p5, #fff5e5);
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  align-self: stretch;
+  position: relative;
+}

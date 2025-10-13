@@ -4,628 +4,251 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vars.css">
   <link rel="stylesheet" href="./style.css">
   
-  
   <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
+   /* Reset CSS cơ bản */
+   a, button, input, select, h1, h2, h3, h4, h5, * {
        box-sizing: border-box;
        margin: 0;
        padding: 0;
        border: none;
        text-decoration: none;
        background: none;
-   
        -webkit-font-smoothing: antialiased;
    }
-   
-   menu, ol, ul {
+   menu, ol, ul, dl {
        list-style-type: none;
        margin: 0;
        padding: 0;
    }
-   </style>
-  <title>Document</title>
+  </style>
+  <title>Course Details</title>
 </head>
 <body>
-  <div class="th-ng-tin-kh-a-h-c">
-    <div class="menu">
-      <div class="frame-1">
-        <div class="logo">
-          <div class="logo2">
-            <img class="bee-1" src="bee-10.png" />
-          </div>
-        </div>
-        <div class="trang-chu">
-          <div class="group-2">
-            <div class="group-1">
-              <div class="trang-ch">Trang chủ</div>
-            </div>
-          </div>
-        </div>
-        <div class="lo-trinh">
-          <div class="l-tr-nh">Lộ trình</div>
-        </div>
-        <div class="de-thi">
-          <div class="thi">Đề thi</div>
-        </div>
+  <div class="course-details-page">
+    
+    <header class="main-header">
+      <nav class="header-nav">
+        <a href="/" class="logo">
+          <img class="logo-icon" src="bee-10.png" alt="BuzzUp Logo" />
+        </a>
+        
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link nav-link--active">Trang chủ</a></li>
+          <li><a href="#" class="nav-link">Lộ trình</a></li>
+          <li><a href="#" class="nav-link">Đề thi</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-menu">
+        <a href="#" class="user-course-link">Khóa học của tôi</a>
+        <img class="user-avatar" src="image-20.png" alt="User Avatar" />
       </div>
-      <div class="khoa-hoc-cua-toi">
-        <div class="khoa-hoc-cua-toi2">
-          <div class="kh-a-h-c-c-a-t-i">Khóa học của tôi</div>
-        </div>
-        <div class="user-icon">
-          <img class="image-2" src="image-20.png" />
-        </div>
-      </div>
-    </div>
-    <div class="frame-4">
-      <div class="frame-42">
-        <div class="frame-43">
-          <div class="l-tr-nh-h-c-jlpt-n-5">Lộ trình học &gt; JLPT N5</div>
-          <div
-            class="kh-a-h-c-jlpt-n-5-gi-p-b-n-n-m-v-ng-n-n-t-ng-ti-ng-nh-t-b-ng-ch-c-i-ng-ph-p-c-b-n-t-v-ng-th-ng-d-ng-v-k-n-ng-giao-ti-p-n-gi-n-trong-i-s-ng-h-ng-ng-y"
-          >
-            Khóa học JLPT N5 giúp bạn nắm vững nền tảng tiếng Nhật: bảng chữ cái,
-            ngữ pháp cơ bản, từ vựng thông dụng và kỹ năng giao tiếp đơn giản
-            trong đời sống hằng ngày.
+    </header>
+    
+    <main class="main-content">
+      
+      <section class="course-info">
+        
+        <h1 class="course-breadcrumb">Lộ trình học &gt; JLPT N5</h1>
+        <p class="course-description">
+          Khóa học JLPT N5 giúp bạn nắm vững nền tảng tiếng Nhật: bảng chữ cái,
+          ngữ pháp cơ bản, từ vựng thông dụng và kỹ năng giao tiếp đơn giản
+          trong đời sống hằng ngày.
+        </p>
+        
+        <dl class="course-meta-group">
+          <dt class="meta-item">
+            <img class="meta-icon" src="_3914759-10.png" alt="Icon" />
+            <span class="meta-name">Tổng số bài học</span>
+          </dt>
+          <dd class="meta-value">150 bài học</dd>
+          
+          <dt class="meta-item">
+            <img class="meta-icon" src="_3917274-10.png" alt="Icon" />
+            <span class="meta-name">Thời lượng</span>
+          </dt>
+          <dd class="meta-value">37 giờ 30 phút</dd>
+          
+          <dt class="meta-item">
+            <img class="meta-icon" src="_3917688-10.png" alt="Icon" />
+            <span class="meta-name">Đối tượng</span>
+          </dt>
+          <dd class="meta-value">Người mới bắt đầu</dd>
+        </dl>
+        
+        <section class="learning-goals">
+          <h2 class="section-title">Bạn sẽ học được những gì?</h2>
+          <ul class="goals-list">
+            
+            <li class="goal-item">
+              <h3 class="goal-title">
+                <img class="check-icon" src="check0.svg" alt="Check" />Kanji
+              </h3>
+              <p class="goal-description">
+                Nắm vững những chữ Hán cơ bản, dễ nhớ và áp dụng trong đời sống hằng ngày.
+              </p>
+            </li>
+            
+            <li class="goal-item">
+              <h3 class="goal-title">
+                <img class="check-icon" src="check1.svg" alt="Check" />Từ vựng
+              </h3>
+              <p class="goal-description">
+                Xây dựng vốn từ theo chủ đề, phục vụ giao tiếp và đọc hiểu hiệu quả.
+              </p>
+            </li>
+            
+            <li class="goal-item">
+              <h3 class="goal-title">
+                <img class="check-icon" src="check2.svg" alt="Check" />Ngữ pháp
+              </h3>
+              <p class="goal-description">
+                Hiểu và sử dụng được các mẫu câu chuẩn JLPT N5, tạo nền tảng vững chắc.
+              </p>
+            </li>
+            
+            <li class="goal-item">
+              <h3 class="goal-title">
+                <img class="check-icon" src="check3.svg" alt="Check" />Đọc hiểu
+              </h3>
+              <p class="goal-description">
+                Rèn luyện khả năng đọc đoạn văn ngắn, nhận diện ý chính và chi tiết.
+              </p>
+            </li>
+            
+            <li class="goal-item">
+              <h3 class="goal-title">
+                <img class="check-icon" src="check4.svg" alt="Check" />Nghe hiểu
+              </h3>
+              <p class="goal-description">
+                Làm quen với hội thoại cơ bản, cải thiện khả năng nghe – hiểu trong tình huống thực tế.
+              </p>
+            </li>
+          </ul>
+        </section>
+        
+        <section class="course-outline">
+          <div class="outline-header">
+            <h2 class="section-title">Nội dung khóa học</h2>
+            <p class="outline-summary">
+              <strong>27 chương・172 bài học・</strong>
+              <span class="summary-regular">Thời lượng</span>
+              <strong>135 giờ 25 phút</strong>
+            </p>
+            <button class="expand-button">Mở rộng tất cả</button>
           </div>
-        </div>
-        <div class="frame-44">
-          <div class="frame-45">
-            <div class="s-bu-i">
-              <img class="_3914759-1" src="_3914759-10.png" />
-              <div class="t-ng-s-b-i-h-c">Tổng số bài học</div>
-            </div>
-            <div class="th-i-gian">
-              <img class="_3917274-1" src="_3917274-10.png" />
-              <div class="th-i-l-ng">Thời lượng</div>
-            </div>
-            <div class="i-t-ng">
-              <img class="_3917688-1" src="_3917688-10.png" />
-              <div class="i-t-ng2">Đối tượng</div>
-            </div>
+          
+          <ul class="chapters-list">
+            
+            <li class="chapter-item chapter-item--expanded">
+              <div class="chapter-header">
+                <h3 class="chapter-name">
+                  <img class="plus-icon" src="plus1.svg" alt="Toggle" />Bảng chữ cái Hiragana
+                </h3>
+                <div class="lesson-count">3 bài học</div>
+              </div>
+              
+              <ul class="lesson-list">
+                <li class="lesson-item">
+                  <span class="lesson-name">Hàng chữ あ(a) - か(ka) - さ(sa)</span>
+                  <span class="lesson-duration">15:20</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-name">Hàng chữ た(ta) - な(na) - は(ha)</span>
+                  <span class="lesson-duration">15:20</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-name">Hàng chữ ま(ma) - や(ya) - ら(ra) - わ(wa)</span>
+                  <span class="lesson-duration">16:20</span>
+                </li>
+              </ul>
+            </li>
+            
+            <li class="chapter-item">
+              <div class="chapter-header">
+                <h3 class="chapter-name">
+                  <img class="plus-icon" src="plus3.svg" alt="Toggle" />Bảng chữ cái Katakana
+                </h3>
+                <div class="lesson-count">4 bài học</div>
+              </div>
+            </li>
+            
+            <li class="chapter-item">
+              <div class="chapter-header">
+                <h3 class="chapter-name">
+                  <img class="plus-icon" src="plus5.svg" alt="Toggle" />Chương 1
+                </h3>
+                <div class="lesson-count">7 bài học</div>
+              </div>
+            </li>
+            
+            <li class="chapter-item">
+              <div class="chapter-header">
+                <h3 class="chapter-name">
+                  <img class="plus-icon" src="plus7.svg" alt="Toggle" />Chương 2
+                </h3>
+                <div class="lesson-count">4 bài học</div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </section>
+      
+      <aside class="course-sidebar">
+        <div class="video-box"></div>
+        <button class="register-button">
+          <span class="register-text">Đăng ký học</span>
+        </button>
+      </aside>
+      
+    </main>
+    
+    <footer class="main-footer">
+      <div class="footer-container">
+        
+        <div class="footer-col footer-col-info">
+          <div class="logo-group">
+            <img class="logo-icon" src="bee-11.png" alt="BuzzUp Logo" />
+            <div class="logo-text">BuzzUp</div>
           </div>
-          <div class="frame-46">
-            <div class="_150-b-i-h-c">150 bài học</div>
-            <div class="_37-gi-30-ph-t">37 giờ 30 phút</div>
-            <div class="ng-i-m-i-b-t-u">Người mới bắt đầu</div>
-          </div>
-        </div>
-        <div class="frame-47">
-          <div class="b-n-s-h-c-c-nh-ng-g">Bạn sẽ học được những gì?</div>
-          <div class="n-i-dung">
-            <div class="kanji">
-              <div class="frame-5">
-                <img class="check" src="check0.svg" />
-                <div class="kanji2">Kanji</div>
-              </div>
-              <div
-                class="n-m-v-ng-nh-ng-ch-h-n-c-b-n-d-nh-v-p-d-ng-trong-i-s-ng-h-ng-ng-y"
-              >
-                Nắm vững những chữ Hán cơ bản, dễ nhớ và áp dụng trong đời sống
-                hằng ngày.
-              </div>
-            </div>
-            <div class="frame-48">
-              <div class="frame-49">
-                <img class="check2" src="check1.svg" />
-                <div class="t-v-ng">Từ vựng</div>
-              </div>
-              <div
-                class="x-y-d-ng-v-n-t-theo-ch-ph-c-v-giao-ti-p-v-c-hi-u-hi-u-qu"
-              >
-                Xây dựng vốn từ theo chủ đề, phục vụ giao tiếp và đọc hiểu hiệu
-                quả.
-              </div>
-            </div>
-            <div class="frame-410">
-              <div class="frame-5">
-                <img class="check3" src="check2.svg" />
-                <div class="ng-ph-p">Ngữ pháp</div>
-              </div>
-              <div
-                class="hi-u-v-s-d-ng-c-c-c-m-u-c-u-chu-n-jlpt-n-5-t-o-n-n-t-ng-v-ng-ch-c"
-              >
-                Hiểu và sử dụng được các mẫu câu chuẩn JLPT N5, tạo nền tảng vững
-                chắc.
-              </div>
-            </div>
-            <div class="frame-411">
-              <div class="frame-49">
-                <img class="check4" src="check3.svg" />
-                <div class="c-hi-u">Đọc hiểu</div>
-              </div>
-              <div
-                class="r-n-luy-n-kh-n-ng-c-o-n-v-n-ng-n-nh-n-di-n-ch-nh-v-chi-ti-t"
-              >
-                Rèn luyện khả năng đọc đoạn văn ngắn, nhận diện ý chính và chi
-                tiết.
-              </div>
-            </div>
-            <div class="frame-412">
-              <div class="frame-49">
-                <img class="check5" src="check4.svg" />
-                <div class="nghe-hi-u">Nghe hiểu</div>
-              </div>
-              <div
-                class="l-m-quen-v-i-h-i-tho-i-c-b-n-c-i-thi-n-kh-n-ng-nghe-hi-u-trong-t-nh-hu-ng-th-c-t"
-              >
-                Làm quen với hội thoại cơ bản, cải thiện khả năng nghe – hiểu
-                trong tình huống thực tế.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="frame-413">
-          <div class="n-i-dung-kh-a-h-c">Nội dung khóa học</div>
-          <div class="frame-414">
-            <div class="_27-ch-ng-172-b-i-h-c-th-i-l-ng-135-gi-25-ph-t">
-              <span>
-                <span class="_27-ch-ng-172-b-i-h-c-th-i-l-ng-135-gi-25-ph-t-span">
-                  27 chương・172 bài học・
-                </span>
-                <span
-                  class="_27-ch-ng-172-b-i-h-c-th-i-l-ng-135-gi-25-ph-t-span2"
-                >
-                  Thời lượng
-                </span>
-                <span
-                  class="_27-ch-ng-172-b-i-h-c-th-i-l-ng-135-gi-25-ph-t-span3"
-                >
-                  135
-                </span>
-                <span class="_27-ch-ng-172-b-i-h-c-th-i-l-ng-135-gi-25-ph-t-span">
-                  giờ 25 phút
-                </span>
-              </span>
-            </div>
-            <div class="m-r-ng-t-t-c">Mở rộng tất cả</div>
-          </div>
-        </div>
-        <div class="frame-415">
-          <div class="frame-416">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus2" src="plus1.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-            <div class="frame-416">
-              <div class="frame-418">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-10">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-11">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-12">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-13">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-14">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-15">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-16">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-17">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-18">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-19">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-              <div class="frame-20">
-                <div class="h-ng-ch-a-ka-sa">
-                  Hàng chữ あ(a) - か(ka) - さ(sa)
-                </div>
-                <div class="_15-20">15:20</div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-53">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus3" src="plus3.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-katakana">Bảng chữ cái Katakana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-6">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus4" src="plus5.svg" />
-                </div>
-                <div class="ch-ng-1">Chương 1</div>
-              </div>
-              <div class="_5-b-i-h-c">5 bài học</div>
-            </div>
-          </div>
-          <div class="frame-7">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus5" src="plus7.svg" />
-                </div>
-                <div class="ch-ng-2">Chương 2</div>
-              </div>
-              <div class="_7-b-i-h-c">7 bài học</div>
-            </div>
-          </div>
-          <div class="frame-8">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus6" src="plus9.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_4-b-i-h-c">4 bài học</div>
-            </div>
-          </div>
-          <div class="frame-9">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus7" src="plus11.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_7-b-i-h-c">7 bài học</div>
-            </div>
-          </div>
-          <div class="frame-102">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus8" src="plus13.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_6-b-i-h-c">6 bài học</div>
-            </div>
-          </div>
-          <div class="frame-112">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus9" src="plus15.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-122">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus10" src="plus17.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-132">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus11" src="plus19.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-142">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus12" src="plus21.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-152">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus13" src="plus23.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-162">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus14" src="plus25.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-172">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus15" src="plus27.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-182">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus16" src="plus29.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-192">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus17" src="plus31.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-202">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus18" src="plus33.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-21">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus19" src="plus35.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-22">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus20" src="plus37.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-23">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus21" src="plus39.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-24">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus22" src="plus41.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-25">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus23" src="plus43.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-26">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus24" src="plus45.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-27">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus25" src="plus47.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-28">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus26" src="plus49.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-29">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus27" src="plus51.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-30">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus28" src="plus53.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-          <div class="frame-31">
-            <div class="frame-52">
-              <div class="frame-417">
-                <div class="plus">
-                  <img class="plus29" src="plus55.svg" />
-                </div>
-                <div class="b-ng-ch-c-i-hiragana">Bảng chữ cái Hiragana</div>
-              </div>
-              <div class="_12-b-i-h-c">12 bài học</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="frame-419">
-        <div class="rectangle-1"></div>
-        <div class="frame-420">
-          <div class="ng-k-h-c">ĐĂNG KÝ HỌC</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="frame-3">
-        <div class="frame-32">
-          <div class="frame-33">
-            <img class="bee-1" src="bee-11.png" />
-            <div class="buzz-up">BuzzUp</div>
-          </div>
-          <div class="n-n-t-ng-h-c-t-p-linh-ho-t-gi-p-b-n-ti-n-b-m-i-ng-y">
+          <p class="tagline">
             Nền tảng học tập linh hoạt, giúp bạn tiến bộ mỗi ngày.
-          </div>
-          <div class="frame-34">
-            <img class="facebook" src="facebook0.svg" />
-            <img class="youtube" src="youtube0.svg" />
-          </div>
-        </div>
-        <div class="frame-35">
-          <div class="v-buzz-up">Về BuzzUp</div>
-          <div class="frame-36">
-            <div class="gi-i-thi-u">Giới thiệu</div>
-            <div class="i-u-kho-n">Điều khoản</div>
-            <div class="b-o-m-t">Bảo mật</div>
+          </p>
+          <div class="social-links">
+            <img class="social-icon" src="facebook0.svg" alt="Facebook" />
+            <img class="social-icon" src="youtube0.svg" alt="Youtube" />
           </div>
         </div>
-        <div class="frame-37">
-          <div class="frame-38">
-            <img class="phone" src="phone0.svg" />
-            <div class="_123-456-789-10">+123 456 789 10</div>
-          </div>
-          <div class="frame-39">
-            <img class="mail" src="mail0.svg" />
-            <div class="contact-buzzup-com">contact@buzzup.com</div>
-          </div>
+        
+        <div class="footer-col footer-col-links">
+          <h4 class="col-title">Về BuzzUp</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#" class="footer-link">Giới thiệu</a></li>
+            <li><a href="#" class="footer-link">Điều khoản</a></li>
+            <li><a href="#" class="footer-link">Bảo mật</a></li>
+          </ul>
         </div>
+        
+        <div class="footer-col footer-col-contact">
+          <h4 class="col-title">Liên hệ</h4>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <img class="contact-icon" src="phone0.svg" alt="Phone" />
+              <span class="contact-text">+123 456 789 10</span>
+            </li>
+            <li class="contact-item">
+              <img class="contact-icon" src="mail0.svg" alt="Email" />
+              <span class="contact-text">contact@buzzup.com</span>
+            </li>
+          </ul>
+        </div>
+        
       </div>
-      <div class="frame-310">
-        <div class="_2025-buzz-up-all-rights-reserved">
-          © 2025 BuzzUp. All rights reserved.
-        </div>
-      </div>
-    </div>
+      <div class="copyright">© 2025 BuzzUp. All rights reserved.</div>
+    </footer>
+    
   </div>
-  
 </body>
 </html>
