@@ -1,3 +1,14 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+
 /* ==== RESET ==== */
 * {
   margin: 0;
@@ -5,17 +16,10 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  background: #f9f9f9;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
-
 /* ==== FIGMA SCALE WRAPPER ==== */
 .figma-wrapper {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;              /* 👈 full chiều cao màn hình */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -23,10 +27,11 @@ html, body {
 }
 
 .figma-frame {
-  width: 1280px;
-  transform-origin: top center;
-  transition: transform 0.25s ease;
+  width: 100%;
+  max-width: 1280px;          /* giữ khung gốc Figma, không scale */
+  min-height: 100vh;          /* 👈 full chiều cao */
   background: #f9f9f9;
+  margin: 0 auto;
 }
 
 /* ==== NAVBAR ==== */
@@ -71,18 +76,22 @@ html, body {
 
 /* ==== BỐ CỤC 2 CỘT ==== */
 .container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 300px 866px 1fr; /* biên trái - cột trái - cột phải - biên phải */
+  column-gap: 17px; /* khoảng cách giữa hai cột và bằng biên */
   align-items: flex-start;
-  padding: 40px 0;
   width: 100%;
-  gap: 72px;
+  padding: 40px 0;
+  box-sizing: border-box;
 }
 
-/* ==== CỘT TRÁI ==== */
+/* Gán vị trí cột */
 .left-column {
-  flex: 0 0 342px;
-  max-width: 342px;
+  grid-column: 2;
+}
+
+.right-column {
+  grid-column: 3;
 }
 
 .profile-card {
@@ -95,7 +104,7 @@ html, body {
   justify-content: space-evenly;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  min-height: 278px;
+  min-height: 100px;
 }
 
 .profile-avatar {
@@ -137,12 +146,7 @@ html, body {
   height: 20px;
 }
 
-/* ==== CỘT PHẢI ==== */
-.right-column {
-  flex: 0 0 866px;
-  max-width: 866px;
-  width: 100%;
-}
+
 
 .attendance {
   background-color: #fff;
@@ -167,13 +171,14 @@ html, body {
 }
 
 .weekday-labels {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 140px;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr); /* 7 hàng ứng với 7 hàng của calendar-grid */
+  row-gap: 3px;
+  align-items: center;                 /* căn giữa theo từng hàng */
   font-size: clamp(10px, 1vw, 12px);
   color: #666;
-  padding-top: 10px;
+  height: auto;
+  margin-top: 22px; /* canh nhẹ với lưới */
 }
 
 .calendar-main {
@@ -200,6 +205,7 @@ html, body {
   gap: 3px;
   width: 100%;
   justify-items: center;
+  align-items: center; /* giúp ô vuông và label cùng baseline */
 }
 
 .day-cell {
@@ -291,4 +297,130 @@ html, body {
 
 .save-btn:hover {
   background-color: #187bcd;
+}
+
+/* ==== TIẾN TRÌNH HỌC ==== */
+.progress-card {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
+
+.progress-card h3 {
+  font-size: clamp(16px, 1.3vw, 20px);
+  margin-bottom: 15px;
+  color: #222;
+  font-weight: 600;
+}
+
+#progressChart {
+  width: 100%;
+  height: 240px;
+}
+
+.detail-box {
+  margin-top: 15px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease;
+}
+.detail-box.hidden { display: none; }
+
+
+/* ==== HOẠT ĐỘNG GẦN ĐÂY ==== */
+.activity-card {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.activity-card h3 {
+  font-size: clamp(16px, 1.3vw, 20px);
+  margin-bottom: 15px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* ✅ Lưới 2 cột + Scroll */
+.activity-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 20px;
+  list-style: none;
+  padding: 0;
+  max-height: 300px;       /* 👈 Chiều cao tối đa khối */
+  overflow-y: auto;        /* 👈 Cho phép cuộn dọc */
+  scrollbar-width: thin;   /* Firefox */
+  scrollbar-color: #1e90ff #f0f0f0; /* Firefox */
+}
+
+/* 👇 Style thanh cuộn cho Chrome/Edge/Safari */
+.activity-list::-webkit-scrollbar {
+  width: 8px;
+}
+.activity-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+.activity-list::-webkit-scrollbar-thumb {
+  background: #1e90ff;
+  border-radius: 4px;
+}
+.activity-list::-webkit-scrollbar-thumb:hover {
+  background: #187bcd;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-left: 4px solid #1e90ff;
+  background-color: #f9fbff;
+  border-radius: 6px;
+  padding: 10px 12px;
+  transition: background 0.3s;
+  min-height: 68px;
+}
+
+.activity-item:hover {
+  background-color: #eef6ff;
+}
+
+.activity-icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+.activity-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 📱 Responsive: dưới 900px quay lại 1 cột */
+@media (max-width: 900px) {
+  .activity-list {
+    grid-template-columns: 1fr;
+  }
 }

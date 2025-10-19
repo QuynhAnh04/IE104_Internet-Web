@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="figma-wrapper">
@@ -39,6 +40,16 @@
                 <span>Sửa thông tin</span>
               </div>
             </div>
+
+            <div class="progress-card">
+              <h3>Tiến trình học tập</h3>
+              <canvas id="progressChart"></canvas>
+              <div id="detailBox" class="detail-box hidden">
+                <h4 id="detailTitle">Chi tiết kỹ năng</h4>
+                <ul id="detailList"></ul>
+              </div>
+            </div>
+
           </section>
 
           <!-- Cột phải -->
@@ -57,6 +68,14 @@
                 </div>
               </div>
             </div>
+
+
+            <div class="activity-card">
+    <h3>Hoạt động gần đây</h3>
+    <ul id="activityList" class="activity-list">
+      <!-- Sẽ được thêm tự động bằng JavaScript -->
+    </ul>
+  </div>
           </section>
         </main>
       </div>
