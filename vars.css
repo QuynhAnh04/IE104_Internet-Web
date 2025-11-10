@@ -1,0 +1,22 @@
+/* Styles of your File */
+:root {
+    /* Colors */
+    --p1: #3d322c;
+    --p2: #654534;
+    --p3: #d9b26e;
+    --p4: #ffebc7;
+  
+    /* Fonts */
+    /* Effects */
+  }
+  /* Color Variables of your File */
+  :root,
+  [data-variable-collection-mode="mode-1"] {
+    /* mode-1 */
+    --p1: #3d322c;
+    --p2: #654534;
+    --p3: #d9b26e;
+    --p4: #ffebc7;
+    --p5: #fff5e5;
+    --xam: #d9d9d9;
+  }
