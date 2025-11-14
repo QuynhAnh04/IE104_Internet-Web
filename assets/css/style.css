@@ -1,3 +1,4 @@
+/* RESET */
 * {
     padding: 0;
     margin: 0;
@@ -8,6 +9,8 @@
     --dark-brown: #3D322C;
     --light-cream: #FFF5E5;
     --white: #FFFFFF;
+    --yellow: #ffb800;
+    --yellow-dark: #e6a300;
 }
 
 html {
@@ -15,7 +18,7 @@ html {
 }
 
 body {
-    margin-top: 58px;
+    margin-top: 58px; /* header fixed cao ~58px */
     font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     font-size: 1.5rem;
@@ -25,7 +28,9 @@ body {
     padding: 0 25px;
 }
 
-/* === HEADER (THANH ĐIỀU HƯỚNG) === */
+/* ====================================================================
+   HEADER (FIXED)
+   ==================================================================== */
 header {
     background-color: var(--white);
     font-size: 2rem;
@@ -38,7 +43,7 @@ header {
 }
 
 .header-hidden {
-    transform: translateY(-100%); 
+    transform: translateY(-100%);
 }
 
 header .container {
@@ -52,38 +57,22 @@ header .right {
     display: flex;
 }
 
-header .left {
-    gap: 30px;
-}
+header .left { gap: 30px; }
 
-header .left ul,
-header .right ul {
+header ul {
     list-style-type: none;
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-header .left li a,
-header .right li a {
+header a {
     color: var(--dark-brown);
     text-decoration: none;
     font-size: 16px;
-    line-height: 46px;
     padding: 0 24px;
     font-weight: 600;
-}
-
-header .left li:hover a,
-header .right li:hover a {
-    cursor: pointer;
-}
-
-.header-user-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--light-cream);
+    line-height: 46px;
 }
 
 .user-img {
@@ -92,7 +81,6 @@ header .right li:hover a {
     border-radius: 50%;
     margin: 4px 0;
     cursor: pointer;
-    vertical-align: middle;
 }
 
 .logo-img {
@@ -102,346 +90,232 @@ header .right li:hover a {
     margin: 4px 0;
 }
 
-.right li:hover .user-menu {
-    display: block;
-}
+/* Dropdown user */
+.right ul li:last-child { position: relative; }
 
-.right .user-menu li:hover a {
-    color: #000;
-    background-color: #ccc;
-}
-
-.right .user-menu {
+.user-menu {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
     background-color: #fff;
-    list-style-type: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     min-width: 160px;
     border-radius: 5px;
+    list-style-type: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
     z-index: 1;
 }
 
-.right .user-menu a {
+.right li:hover .user-menu { display: block; }
+
+.user-menu a {
     color: #000;
     padding: 0 12px;
     line-height: 38px;
     display: block;
 }
 
-.right ul li:last-child {
-    position: relative;
+.user-menu li:hover a {
+    background-color: #ccc;
+    color: #000;
 }
 
-/* === HERO SECTION === */
-.hero {
-    padding-top: 15%;
-    padding-bottom: 30%;
-    padding-left: 60px;
-    background: url('/assets/img/introduce/ad-1.png') top center / cover no-repeat;
-    color: var(--dark-brown);
-    position: relative;
+/* ====================================================================
+   EXAM TOPBAR (SEARCH + FILTER + LEVEL)
+   ==================================================================== */
+
+.exam-topbar {
+    position: sticky;
+    top: 58px;      /* đúng chiều cao header */
+    z-index: 999;
+    background: #fff;
+    padding: 15px 25px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
 }
 
-.hero .container {
+/* Search box */
+.exam-search-bar {
     display: flex;
     align-items: center;
-    gap: 40px;
-}
-
-.hero-content {
-    position: absolute;
-}
-
-.hero-content h1 {
-    font-size: 3.6rem;
-    margin-top: 0;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    margin-right: 50px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--dark-brown);
-    color: var(--light-cream);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.hero .btn {
-    background-color: var(--dark-brown);
-    color: var(--light-cream);
-}
-
-.hero .btn:hover {
-    background-color:#2a231f;
-    color: var(--light-cream);
-}
-
-.hero-content i {
-    margin-left: 10px;
-    font-size: 15px;
-}
-
-/*=== PARTICIPANT BAR ===*/
-.participant-bar p {
-    text-align: center;
-    background-color: var(--dark-brown);
-    color: var(--light-cream);
-    padding: 10px 0;
-    font-size: 1.2em;
-}
-
-/*=== FEATURE SECTION ===*/
-.features-section {
-    background-color: var(--light-cream);
-    color: var(--dark-brown);
-    padding: 60px 60px;
-    gap: 100px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    margin-top: 0;
-    margin-bottom: 50px;
-    color: var(--dark-brown);
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.feature-item:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.feature-image {
+    gap: 8px;
+    background: #f5f5f5;
+    padding: 8px 14px;
+    border-radius: 8px;
     flex: 1;
 }
 
-.feature-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.feature-content {
-    flex: 1;
-}
-
-.feature-content h3 {
-    font-size: 28px;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.feature-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
-}
-
-.feature-item .btn:hover {
-    background-color: #2a231f;
-}
-
-/* === BENEFITS SECTION === */
-.benefits-section {
-    background-color: var(--dark-brown);
-    color: var(--light-cream);
-    padding: 60px 0;
-}
-
-.benefits-grid {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    gap: 30px;
-}
-
-.benefit-item {
-    flex: 1;
-    max-width: 300px;
-    align-content: center;
-}
-
-.benefit-item i {
-    display: block;
-    font-size: 4rem;
-    margin: 20px auto;
-    stroke: var(--light-cream);
-    fill: none;
-}
-
-.benefit-item h4 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.benefit-item p {
-    font-size: 1.4rem;
-    opacity: 0.9;
-}
-
-/* === COURSES SECTION === */
-.courses-section {
-    background-color: var(--light-cream);
-    color: var(--dark-brown);
-    padding: 60px 0;
-}
-
-.courses-section .slider {
-    position: relative;
-}
-
-.courses-grid {
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    white-space: nowrap;
-    gap: 25px;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
-
-/* Chrome, Safari và Opera */
-.courses-grid::-webkit-scrollbar {
-    display: none; 
-}
-
-.nav-arrow {
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%); 
-    transition: transform 0.1s ease-out;
-    z-index: 10;
-    background: none;
+.exam-search-bar input {
     border: none;
-    cursor: pointer;
-}
-
-.nav-arrow i {
-    font-size: 35px;
-    width: 35px;
-    height: 35px;
-    color: var(--dark-brown);
-    background-color: var(--light-cream);
-    border-radius: 50%;
-}
-
-.prev-arrow {
-    left: -3px;
-}
-
-.next-arrow {
-    right: -3px;
-}
-
-.prev-arrow:active,
-.next-arrow:active {
-    transform: translateY(-50%) scale(0.9);
-}
-
-.course-card {
-    min-width: 245px; 
-    max-width: 245px;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.course-card img {
+    background: transparent;
+    outline: none;
+    font-size: 14px;
     width: 100%;
-    height: 140px;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
 }
 
-.course-card-content {
-    padding: 20px;
-}
-
-.course-card-content h5 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.course-card-content a {
-    text-decoration: none;
-    color: var(--dark-brown);
-}
-
-.course-card-rating {
-    margin-bottom: 15px;
-    display: inline-block;
-    position: relative;
-    line-height: 1.5;
-}
-
-.course-card-rating::before,
-.course-card-rating::after {
-    font-family: 'Font Awesome 6 Free'; 
-    font-weight: 900; 
-}
-
-.course-card-rating::before {
-    content: '\f005 \f005 \f005 \f005 \f005';
-    color: #ccc;
-    letter-spacing: 2px;
-}
-
-.course-card-rating::after {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    position: absolute;
-    left: 0;
-    overflow: hidden; 
-    color: #FDC700;
-    letter-spacing: 2px;
-    width: var(--rating-width, 0%);
-}
-
-.course-card-meta {
-    display: flex;
-    justify-content: space-between;
+/* Filter */
+.exam-filter {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
     font-size: 14px;
 }
 
-.course-card-meta span {
+/* Levels (N5 - N1) */
+.exam-levels {
+    display: flex;
+    gap: 8px;
+}
+
+.exam-levels .level {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.exam-levels .level:hover { background: #eaeaea; }
+
+.exam-levels .level.active {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: #fff;
+}
+
+/* ====================================================================
+   EXAM SECTIONS
+   ==================================================================== */
+
+.exam-sections {
+    padding: 25px 20px;
+}
+
+/* Title + "Xem thêm" inline */
+.exam-section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;          /* padding để nút không dính lề phải */
+    margin: 20px 0 10px;
+}
+
+.exam-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* "Xem thêm" inline button */
+.see-more-inline {
+    align-self: flex-end;
+    margin-right: 25px; /* giống padding container */
+    background: var(--yellow);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    font-size: 14px;
+    transition: 0.2s;
 }
 
-.course-card-meta i {
-    font-size: 15px;
-    margin-right: 10px;
+.see-more-inline:hover { background: var(--yellow-dark); }
+
+/* Exam rows (3 per line) */
+.exam-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
-.course-card-meta p {
+/* Exam Card */
+.exam-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.exam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+/* Card content */
+.exam-header {
     display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.level-badge {
+    background: var(--yellow);
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.exam-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.exam-info {
+    margin: 12px 0;
+    color: #666;
+}
+
+.exam-info p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.exam-footer {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-/* === FOOTER === */
+.start-btn {
+    background: var(--yellow);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.start-btn:hover { background: var(--yellow-dark); }
+
+.rating { font-weight: 600; }
+
+/* ====================================================================
+   RESPONSIVE
+   ==================================================================== */
+
+@media (max-width: 768px) {
+    .exam-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====================================================================
+   FOOTER
+   ==================================================================== */
+
 .footer {
     background-color: var(--dark-brown);
     color: var(--light-cream);
@@ -511,8 +385,10 @@ header .right li:hover a {
     font-size: 1.3rem;
     opacity: 0.7;
 }
+/* ====================================================================
+   SCROLL TO TOP BUTTON
+   ==================================================================== */
 
-/*=== SCROLL TO TOP BTN ===*/
 .scroll-btn {
     position: fixed;
     bottom: 40px;
@@ -522,7 +398,7 @@ header .right li:hover a {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: 0.3s;
 }
 
 .scroll-btn.show {
@@ -531,9 +407,111 @@ header .right li:hover a {
 }
 
 .scroll-btn i {
-    width: 45px;
-    height: 45px;
     font-size: 45px;
     color: rgba(220, 220, 220, 0.8);
-    border-radius: 50%;
+}
+
+/* ========== BOTTOM SHEET (SUBSCREEN) ========== */
+
+/* ========== MODAL OVERLAY ========== */
+.sheet-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: .25s;
+    z-index: 2000;
+}
+
+.sheet-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========== MODAL (TRUNG TÂM MÀN HÌNH) ========== */
+.exam-sheet {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+
+    width: 540px;       /*  <-- tăng chiều rộng lên */
+    max-width: 95%;     /* chống tràn màn hình */
+    max-height: 85vh;
+
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    z-index: 2100;
+    transition: .25s ease;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.exam-sheet.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.exam-sheet.hidden {
+    display: none;
+}
+
+/* HEADER */
+.exam-sheet-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.sheet-close {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* BODY */
+.exam-sheet-body {
+    padding: 18px 20px;
+    overflow-y: auto;
+}
+
+/* START BUTTON */
+.sheet-start-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #ffb800;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sheet-start-btn:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-3px);  /* nhích lên nhẹ */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Hiệu ứng khi click */
+.sheet-start-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.sheet-content ul {
+    padding-left: 0;
+    list-style-position: inside;   /* icon bullet nằm trong vùng nội dung */
 }
