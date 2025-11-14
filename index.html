@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuzzUp - Học Ngôn Ngữ</title>
-
     <link rel="stylesheet" href="./assets/css/style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
-    <!-- HEADER -->
     <header>
         <div class="container">
             <nav class="left">
@@ -34,81 +31,259 @@
                     </li>
                 </ul>
             </nav>
+    
         </div>
     </header>
 
-    <!-- TOPBAR SEARCH + FILTER + LEVEL -->
-    <div class="exam-topbar">
-
-        <div class="exam-search-bar">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Tìm bài thi...">
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>BuzzUp – Kiến thức vo ve, ý tưởng bùng nổ</h1>
+                <p>Nền tảng học ngôn ngữ dành cho Gen hiện đại – học nhanh, nhớ lâu, áp dụng ngay vào thực tế.</p>
+                <a href="#" class="btn">Các khóa học<i class="fa-solid fa-chevron-right"></i></a>
+            </div>
         </div>
-
-        <select class="exam-filter">
-            <option value="">Tất cả kỹ năng</option>
-            <option value="kanji">Kanji</option>
-            <option value="vocab">Từ vựng</option>
-            <option value="grammar">Ngữ pháp</option>
-            <option value="reading">Đọc hiểu</option>
-            <option value="listening">Nghe hiểu</option>
-        </select>
-
-        <div class="exam-levels">
-            <button class="level level-all active" data-level="ALL">Tất cả</button>
-            <button class="level" data-level="N5">N5</button>
-            <button class="level" data-level="N4">N4</button>
-            <button class="level" data-level="N3">N3</button>
-            <button class="level" data-level="N2">N2</button>
-            <button class="level" data-level="N1">N1</button>
-        </div>
-
     </div>
 
-    <!-- SECTION ĐỂ JS RENDER -->
-    <div class="exam-sections"></div>
-
-
-    <!-- BOTTOM SHEET: CHI TIẾT ĐỀ THI -->
-<div id="examSheet" class="exam-sheet hidden">
-    <div class="exam-sheet-header">
-        <h2 id="sheetTitle"></h2>
-        <button id="sheetCloseBtn" class="sheet-close">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
+    <div class="participant-bar">
+        <p>21k+ người tham gia</p>
     </div>
 
-    <div class="exam-sheet-body">
-        <div class="sheet-info">
-            <p><i class="fa-solid fa-layer-group"></i> <span id="sheetQuestions"></span></p>
-            <p><i class="fa-solid fa-clock"></i> <span id="sheetTime"></span></p>
-            <p><i class="fa-solid fa-user-group"></i> <span id="sheetTries"></span></p>
-            <p><i class="fa-solid fa-star"></i> <span id="sheetRating"></span></p>
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Tại sao nên chọn BuzzUp?</h2>
+
+            <div class="feature-item">
+                <div class="feature-image">
+                    <img src="./assets/img/introduce/ad-2.jpg" alt="Học nhẹ nhàng, nói tự tin">
+                </div>
+                <div class="feature-content">
+                    <h3>Học nhẹ nhàng, nói tự tin</h3>
+                    <p>BuzzUp giúp bạn tiếp thu kiến thức, thực hành liên tục và áp dụng ngay trong đời sống. Bạn không còn phải "cày" kiến thức một cách vất vả, bạn sẽ thấy mình tiến bộ mỗi ngày và tự tin chuẩn bị cho mọi tình huống giao tiếp.</p>
+                    <a href="roadmap.html" class="btn">Tìm hiểu thêm</a>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-image">
+                    <img src="./assets/img/introduce/ad-3.jpg" alt="Học mọi lúc, mọi nơi">
+                </div>
+                <div class="feature-content">
+                    <h3>Học mọi lúc, mọi nơi</h3>
+                    <p>Sự tập trung của bạn chính là chìa khóa giúp bạn ghi nhớ và thoải mái. Chỉ 5 phút, bạn có thể luyện tập trong quán cà phê, trạm xe buýt hay bất cứ đâu. BuzzUp tối ưu hóa thời gian học tập, giúp bạn học theo tốc độ của mình và duy trì động lực.</p>
+                    <a href="roadmap.html" class="btn">Bắt đầu học</a>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-image">
+                    <img src="./assets/img/introduce/ad-4.jpg" alt="Phát triển kỹ năng">
+                </div>
+                <div class="feature-content">
+                    <h3>Phát triển kỹ năng với nhiều công cụ đa dạng</h3>
+                    <p>Khám phá bản thân qua nhiều phương pháp và công cụ học tập. Bạn được tự do lựa chọn lộ trình, bài tập thực hành theo sở thích cá nhân. BuzzUp không chỉ dạy bạn ngôn ngữ, mà còn giúp bạn phát triển tư duy, kỹ năng giải quyết vấn đề.</p>
+                    <a href="roadmap.html" class="btn">Khám phá ngay</a>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <div class="sheet-description">
-            <h3>Mô tả bài thi</h3>
-            <p id="sheetDescription"></p>
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h4>Học từ chuyên gia</h4>
+                    <p>Nội dung được thiết kế bởi đội ngũ chuyên gia ngôn ngữ và sư phạm hàng đầu.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h4>Nền tảng toàn diện</h4>
+                    <p>Kết hợp nhiều công cụ, phương pháp giảng dạy để tối ưu hóa việc học.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h4>Đáng tin cậy</h4>
+                    <p>Hàng ngàn học viên đã chọn BuzzUp để đồng hành trên con đường chinh phục ngôn ngữ.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="sheet-content">
-            <h3>Nội dung bài thi</h3>
-            <ul id="sheetContentList"></ul>
+    <section class="courses-section">
+        <div class="container">
+            <h2 class="section-title">Các khóa học phổ biến</h2>
+    
+            <div class="slider">
+                <button class="nav-arrow prev-arrow" id="prevBtn">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
+
+                <div class="courses-grid" id="coursesGrid">
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">JLPT N2</a></h5>
+    
+                            <div class="course-card-rating" data-rating="5">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+    
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+    
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">JLPT N3</a></h5>
+    
+                            <div class="course-card-rating" data-rating="4.5">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+    
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">HSK1</a></h5>
+    
+                            <div class="course-card-rating" data-rating="4">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+    
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">HSK5</a></h5>
+    
+                            <div class="course-card-rating" data-rating="4">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+    
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">IELTS 6.5</a></h5>
+    
+                            <div class="course-card-rating" data-rating="4">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+    
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">TOEIC 600</a></h5>
+    
+                            <div class="course-card-rating" data-rating="4.5">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+    
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="course-card">
+                        <img src="./assets/img/courses/N5.jpg" alt="Khóa học JLPT N3">
+                        <div class="course-card-content">
+                            <h5><a href="roadmap.html">TOPIK 4</a></h5>
+    
+                            <div class="course-card-rating" data-rating="   5">
+                                <span class="star"></span>
+                            </div>
+    
+                            <div class="course-card-meta">
+                                <p class="participants" data-participants="123.456">
+                                    <i class="fa-solid fa-users"></i> <span>123.456</span>
+                                </p>
+                            
+                                <p>
+                                    <i class="fa-regular fa-clock"></i>
+                                    3 tháng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="nav-arrow next-arrow" id="nextBtn">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+            </div>
         </div>
+    </section>
 
-        <button id="sheetStartBtn" class="sheet-start-btn">
-            <i class="fa-solid fa-play"></i> Bắt đầu thi
-        </button>
-    </div>
-</div>
-
-
-<!-- LAYER NỀN MỜ -->
-<div id="sheetOverlay" class="sheet-overlay hidden"></div>
-
-
-
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-col col-1">
@@ -155,6 +330,5 @@
     </button>
 
     <script src="./assets/js/main.js" defer></script>
-
 </body>
 </html>
