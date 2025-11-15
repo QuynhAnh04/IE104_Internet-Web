@@ -11,7 +11,7 @@
 }
 
 html {
-    font-size: 10px;
+    font-size: clamp(7px, 0.4vw + 7.5px, 10px)
 }
 
 body {
@@ -22,7 +22,8 @@ body {
 }
 
 .container {
-    padding: 0 25px;
+    padding-left: clamp(10px, 3vw, 25px);
+    padding-right: clamp(10px, 3vw, 25px);
 }
 
 /* === HEADER (THANH ĐIỀU HƯỚNG) === */
@@ -170,7 +171,7 @@ header .right li:hover a {
 
 .hero-content {
     position: absolute;
-    max-width: 90rem;
+    min-width: clamp(6rem, 1vw + 1.5rem, 9rem);
 }
 
 .hero-content h1 {
@@ -282,7 +283,6 @@ header .right li:hover a {
 .benefits-section {
     background-color: var(--dark-brown);
     color: var(--light-cream);
-    padding: 6rem 0;
 }
 
 .benefits-grid {
@@ -295,6 +295,7 @@ header .right li:hover a {
     flex: 1;
     max-width: 30rem;
     align-content: center;
+    padding: 6rem 0;
 }
 
 .benefit-item i {
@@ -332,6 +333,7 @@ header .right li:hover a {
     scroll-behavior: smooth;
     white-space: nowrap;
     gap: 2.5rem;
+    margin: 0 2rem;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
@@ -362,11 +364,11 @@ header .right li:hover a {
 }
 
 .prev-arrow {
-    left: -2rem;
+    left: 0rem;
 }
 
 .next-arrow {
-    right: -2rem;
+    right: 0rem;
 }
 
 .prev-arrow:active,
@@ -375,8 +377,7 @@ header .right li:hover a {
 }
 
 .course-card {
-    min-width: 245px; 
-    max-width: 245px;
+    min-width: clamp(250px, 20vw, 400px);
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -555,15 +556,6 @@ header .right li:hover a {
 }
 
 @media (max-width: 900px) {
-    html {
-        font-size: 9px; 
-    }
-
-    /* === GENERAL & CONTAINER === */
-    .container {
-        padding: 0 15px;
-    }
-
     .page-header {
         padding: 20px 15px;
     }
@@ -612,11 +604,7 @@ header .right li:hover a {
     
     /*=== HERO SECTION ===*/
     .hero {
-        background: url('/assets/img/introduce/ad-1_media.png') right center / cover no-repeat;
-    }
-
-    .hero-content {
-        max-width: 60rem;
+        background: url('/assets/img/introduce/ad-1_media.jpg') right center / cover no-repeat;
     }
 
     .hero-content h1 {
@@ -654,15 +642,6 @@ header .right li:hover a {
 }
 
     @media (max-width: 600px) {
-    html {
-        font-size: 8px; 
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    /*=== HERO SECTION ===*/
     .hero-content {
         max-width: 42rem;
     }
