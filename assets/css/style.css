@@ -37,14 +37,11 @@ header {
     transition: transform 0.3s ease-in-out;
 }
 
-.header-hidden {
-    transform: translateY(-100%); 
-}
-
 header .container {
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
+    border-bottom: 1px solid #ccc;
 }
 
 header .left,
@@ -68,8 +65,8 @@ header .left li a,
 header .right li a {
     color: var(--dark-brown);
     text-decoration: none;
-    font-size: 16px;
-    line-height: 46px;
+    font-size: 1.6rem;
+    line-height: 4.6rem;
     padding: 0 24px;
     font-weight: 600;
 }
@@ -106,13 +103,9 @@ header .right li:hover a {
     display: block;
 }
 
-.right .user-menu li:hover a {
-    color: #000;
-    background-color: #ccc;
-}
-
 .right .user-menu {
-    display: none;
+    visibility: hidden;
+    display: block;
     position: absolute;
     top: 100%;
     right: 0;
@@ -122,6 +115,30 @@ header .right li:hover a {
     min-width: 160px;
     border-radius: 5px;
     z-index: 1;
+}
+
+.right .user-menu.show {
+    visibility: visible;
+}
+
+.right .user-menu a {
+    font-size: 1.4rem;
+}
+
+
+.right .user-menu li:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.right .user-menu li:first-child:hover {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.right .user-menu li:last-child:hover {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .right .user-menu a {
@@ -137,9 +154,9 @@ header .right li:hover a {
 
 /* === HERO SECTION === */
 .hero {
-    padding-top: 15%;
-    padding-bottom: 30%;
-    padding-left: 60px;
+    padding-top: 20rem;
+    padding-bottom: 35rem;
+    padding-left: 6rem;
     background: url('/assets/img/introduce/ad-1.png') top center / cover no-repeat;
     color: var(--dark-brown);
     position: relative;
@@ -153,6 +170,7 @@ header .right li:hover a {
 
 .hero-content {
     position: absolute;
+    max-width: 90rem;
 }
 
 .hero-content h1 {
@@ -192,7 +210,7 @@ header .right li:hover a {
 
 .hero-content i {
     margin-left: 10px;
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 /*=== PARTICIPANT BAR ===*/
@@ -214,17 +232,17 @@ header .right li:hover a {
 
 .section-title {
     text-align: center;
-    font-size: 36px;
+    font-size: 3.6rem;
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
     color: var(--dark-brown);
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 50px;
+    gap: 4rem;
+    margin-bottom: 5rem;
 }
 
 .feature-item:nth-child(even) {
@@ -246,14 +264,14 @@ header .right li:hover a {
 }
 
 .feature-content h3 {
-    font-size: 28px;
+    font-size: 2.8rem;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 .feature-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
 }
 
 .feature-item .btn:hover {
@@ -264,19 +282,18 @@ header .right li:hover a {
 .benefits-section {
     background-color: var(--dark-brown);
     color: var(--light-cream);
-    padding: 60px 0;
+    padding: 6rem 0;
 }
 
 .benefits-grid {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    gap: 30px;
 }
 
 .benefit-item {
     flex: 1;
-    max-width: 300px;
+    max-width: 30rem;
     align-content: center;
 }
 
@@ -305,7 +322,7 @@ header .right li:hover a {
     padding: 60px 0;
 }
 
-.courses-section .slider {
+.slider {
     position: relative;
 }
 
@@ -314,7 +331,7 @@ header .right li:hover a {
     overflow-x: scroll;
     scroll-behavior: smooth;
     white-space: nowrap;
-    gap: 25px;
+    gap: 2.5rem;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
@@ -345,11 +362,11 @@ header .right li:hover a {
 }
 
 .prev-arrow {
-    left: -3px;
+    left: -2rem;
 }
 
 .next-arrow {
-    right: -3px;
+    right: -2rem;
 }
 
 .prev-arrow:active,
@@ -365,6 +382,7 @@ header .right li:hover a {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     flex-shrink: 0;
+    margin-bottom: 20px;
 }
 
 .course-card img {
@@ -380,7 +398,7 @@ header .right li:hover a {
 }
 
 .course-card-content h5 {
-    font-size: 20px;
+    font-size: 2rem;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -422,7 +440,7 @@ header .right li:hover a {
 .course-card-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .course-card-meta span {
@@ -432,7 +450,7 @@ header .right li:hover a {
 }
 
 .course-card-meta i {
-    font-size: 15px;
+    font-size: 1.5rem;
     margin-right: 10px;
 }
 
@@ -455,7 +473,7 @@ header .right li:hover a {
 }
 
 .footer-col h6 {
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: 15px;
     color: var(--white);
 }
@@ -490,7 +508,7 @@ header .right li:hover a {
 }
 
 .footer-col .fa-solid {
-    font-size: 12px;
+    font-size: 1.2rem;
     margin-right: 10px;
 }
 
@@ -531,71 +549,83 @@ header .right li:hover a {
 }
 
 .scroll-btn i {
-    width: 45px;
-    height: 45px;
-    font-size: 45px;
+    font-size: 4.5rem;
     color: rgba(220, 220, 220, 0.8);
     border-radius: 50%;
 }
 
-Đây là các bước bạn cần làm để thêm tính năng Responsive (thích ứng với nhiều kích thước màn hình) cho trang chủ (index.html) bằng cách chỉnh sửa file style.css.
-
-Tôi sẽ sử dụng breakpoint chính là 900px và bổ sung thêm breakpoint 600px để tối ưu hóa cho điện thoại.
-
-🛠️ Cập nhật file style.css
-Bạn hãy thêm khối code Media Query sau vào cuối file style.css của mình:
-
-CSS
-
-/* ================================================= */
-/* === RESPONSIVE (Màn hình lớn, tối đa 900px) === */
-/* ================================================= */
-
 @media (max-width: 900px) {
+    html {
+        font-size: 9px; 
+    }
+
     /* === GENERAL & CONTAINER === */
     .container {
         padding: 0 15px;
     }
 
-    /* === HEADER (THANH ĐIỀU HƯỚNG) === */
-    header .left ul,
-    header .right {
-        display: none;
+    .page-header {
+        padding: 20px 15px;
     }
-    
+
+    /* ===  HEADER === */
     header .container {
-        justify-content: space-between;
         padding: 5px 15px;
     }
 
+    header .left {
+        gap: 15px; 
+    }
+
     header .left img {
+        position: relative;
         cursor: pointer;
     }
 
     header .left ul {
-        display: block; 
+        visibility: hidden;
+        display: block;
         position: absolute;
-        top: 100%; 
+        top: 100%;
         left: 0;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
         width: 100%;
-        background-color: var(--white);
-        border-top: 1px solid #eee;
-        z-index: 990;
-        visibility: hidden; 
-        opacity: 0;
-        transition: visibility 0s, opacity 0.3s ease;
-        padding: 0;
     }
 
     header .left ul.show {
         visibility: visible;
-        opacity: 1;
+    }
+
+    header .left li {
+        padding: 5px;
+    }
+
+    header .left li:hover {
+        background-color: #ccc;
+    }
+
+    header a {
+        font-size: 1.5rem;
     }
     
-    header .left li {
-        text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #eee;
+    /*=== HERO SECTION ===*/
+    .hero {
+        background: url('/assets/img/introduce/ad-1_media.png') right center / cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 60rem;
+    }
+
+    .hero-content h1 {
+        margin-top: 70px;
+    }
+
+    /*=== FEATURE ===*/
+    .feature-item {
+        display: block;
     }
 
     /* === FOOTER === */
@@ -621,5 +651,35 @@ CSS
     .footer-col .fa-solid {
         margin-right: 5px;
     }
+}
 
+    @media (max-width: 600px) {
+    html {
+        font-size: 8px; 
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /*=== HERO SECTION ===*/
+    .hero-content {
+        max-width: 42rem;
+    }
+
+    .hero-content h1 {
+        margin-top: 25%;
+        left: 0;
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.6rem;
+    }
+
+    /*=== BENEFIT ===*/
+    .benefits-grid {
+        display: block;
+        justify-items: center;
+    }
 }

@@ -11,9 +11,9 @@
     <header>
         <div class="container">
             <nav class="left">
-                <img class="logo-img" src="./assets/img/bee.png">
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
+                <img class="logo-img" src="./assets/img/bee.png" data-action="toggle-popup" data-target="#navMenu">
+                <ul class="dropdown-menu" id="navMenu">
+                    <li><a href="index.html">Trang chủ</a></li>
                     <li><a href="roadmap.html">Lộ trình</a></li>
                     <li><a href="#">Đề thi</a></li>
                 </ul>
@@ -23,7 +23,7 @@
                 <ul>
                     <li><a href="#">Khóa học của tôi</a></li>
                     <li>
-                        <img id="userIcon" class="user-img" src="./assets/img/user.png">
+                        <img class="user-img" src="./assets/img/user.png" data-action="toggle-popup" data-target="#userMenu">
                         <ul id="userMenu" class="user-menu">
                             <li><a href="#">Thông tin cá nhân</a></li>
                             <li><a href="#">Đăng xuất</a></li>
@@ -31,7 +31,7 @@
                     </li>
                 </ul>
             </nav>
-    
+
         </div>
     </header>
 
@@ -116,7 +116,7 @@
             <h2 class="section-title">Các khóa học phổ biến</h2>
     
             <div class="slider">
-                <button class="nav-arrow prev-arrow" id="prevBtn">
+                <button class="nav-arrow prev-arrow">
                     <i class="fa-solid fa-circle-arrow-left"></i>
                 </button>
 
@@ -277,8 +277,8 @@
                     </div>
                 </div>
 
-                <button class="nav-arrow next-arrow" id="nextBtn">
-                    <i class="fa-solid fa-circle-arrow-right"></i>
+                <button class="nav-arrow next-arrow">
+                        <i class="fa-solid fa-circle-arrow-right"></i>
                 </button>
             </div>
         </div>
@@ -329,6 +329,10 @@
         <i class="fa-solid fa-circle-arrow-up"></i>
     </button>
 
-    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/autoHideNavBar.js" defer></script>
+    <script src="./assets/js/popUp.js" defer></script>
+    <script src="./assets/js/rating.js" defer></script>
+    <script src="./assets/js/scrollToTop.js" defer></script>
+    <script src="./assets/js/slider.js" defer></script>
 </body>
 </html>

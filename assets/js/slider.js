@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     function initSlider(slider) {
-        const coursesGrid = slider.querySelector('.knowledge-grid, .skill-grid');
+        const coursesGrid = slider.querySelector('.knowledge-grid, .skill-grid, .courses-grid');
         const prevBtn = slider.querySelector('.prev-arrow');
         const nextBtn = slider.querySelector('.next-arrow');
 
