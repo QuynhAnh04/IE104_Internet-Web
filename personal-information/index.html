@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang thông tin cá nhân</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="figma-wrapper">
+      <div class="figma-frame">
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar">
+          <div class="nav-item logo">MyStudy</div>
+          <div class="nav-item"><a href="#">Trang chủ</a></div>
+          <div class="nav-item"><a href="#">Lộ trình</a></div>
+          <div class="nav-item"><a href="#">Đề thi</a></div>
+          <div class="nav-item"><a href="#">Khóa học của tôi</a></div>
+          <div class="nav-item avatar-container">
+            <img src="avatar.jpg" alt="Ảnh đại diện" class="avatar" />
+          </div>
+        </nav>
+
+        <!-- ===== NỘI DUNG CHÍNH ===== -->
+        <main class="container">
+          <!-- Cột trái -->
+          <section class="left-column">
+            <div class="profile-card">
+              <img src="avatar.jpg" alt="Ảnh đại diện" class="profile-avatar" />
+              <h2 class="profile-name">Nguyễn Minh Hưng</h2>
+              <p class="profile-email">minh.hung@example.com</p>
+
+              <div class="edit-box">
+                <img src="edit-icon.png" alt="Edit icon" class="edit-icon" />
+                <span>Sửa thông tin</span>
+              </div>
+            </div>
+
+            <div class="progress-card">
+              <h3>Tiến trình học tập</h3>
+              <canvas id="progressChart"></canvas>
+              <div id="detailBox" class="detail-box hidden">
+                <h4 id="detailTitle">Chi tiết kỹ năng</h4>
+                <ul id="detailList"></ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cột phải -->
+          <section class="right-column">
+            <div class="attendance">
+              <h3>Điểm chuyên cần</h3>
+              <div class="calendar-wrapper">
+                <div class="weekday-labels">
+                  <span>Mon</span><span>Tue</span><span>Wed</span
+                  ><span>Thu</span> <span>Fri</span><span>Sat</span
+                  ><span>Sun</span>
+                </div>
+
+                <div class="calendar-main">
+                  <div class="month-labels" id="month-labels"></div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <h3>Hoạt động gần đây</h3>
+              <ul id="activityList" class="activity-list">
+                <!-- Sẽ được thêm tự động bằng JavaScript -->
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- ===== MODAL (ngoài frame để không bị scale) ===== -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Sửa thông tin cá nhân</h2>
+
+        <form id="editForm">
+          <label for="name">Họ và tên:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="Nguyễn Minh Hưng"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="minh.hung@example.com"
+            required
+          />
+
+          <label for="avatar">Ảnh đại diện:</label>
+          <input type="file" id="avatar" name="avatar" accept="image/*" />
+
+          <button type="submit" class="save-btn">Lưu thay đổi</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
