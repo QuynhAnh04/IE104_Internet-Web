@@ -268,25 +268,116 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-  }
+/* ===========================
+   Responsive Tablet (≤1024px)
+   =========================== */
+   @media (max-width: 1024px) {
 
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
+    nav ul {
+      gap: 40px; /* Giảm khoảng cách menu */
+    }
+  
+    main {
+      padding: 0 30px;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    .course-stats {
+      grid-template-columns: 1fr; /* Dồn lại một cột */
+    }
+  
+    .course-image {
+      height: 200px;
+    }
+  
+    .register-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
   }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+  
+  /* ===========================
+     Responsive Mobile (≤480px)
+     =========================== */
+  @media (max-width: 480px) {
+  
+    header {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    nav a {
+      font-size: 18px;
+    }
+  
+    .user-profile {
+      gap: 10px;
+      font-size: 16px;
+    }
+  
+    main {
+      grid-template-columns: 1fr;
+      padding: 0 15px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    p,
+    .what-you-learn li strong {
+      font-size: 14px;
+    }
+  
+    .course-stats {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    summary {
+      font-size: 16px;
+    }
+  
+    .lesson {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .course-image {
+      height: 180px;
+    }
+  
+    .register-btn {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    footer {
+      padding: 30px 20px;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-section {
+      max-width: 100%;
+    }
+  
+    .social-icons img {
+      width: 25px;
+      height: 25px;
+    }
   }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
+  
