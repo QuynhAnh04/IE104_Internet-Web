@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài giảng – BuzzUp</title>
+
+    <!-- Font + CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header>
+        <div class="container">
+            <nav class="left">
+                <img class="logo-img" src="./assets/img/bee.png">
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="roadmap.html">Lộ trình</a></li>
+                    <li><a href="#">Đề thi</a></li>
+                </ul>
+            </nav>
+
+            <nav class="right">
+                <ul>
+                    <li><a href="#">Khóa học của tôi</a></li>
+                    <li>
+                        <img id="userIcon" class="user-img" src="./assets/img/user.png">
+                        <ul id="userMenu" class="user-menu">
+                            <li><a href="#">Thông tin cá nhân</a></li>
+                            <li><a href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ===================== THANH THÔNG TIN KHÓA HỌC ===================== -->
+    <section class="lesson-info">
+      <div class="lesson-left">
+        <button class="back-btn">&lt;</button>
+        <h2 class="course-title">JLPT N5 – Bài 1: Giới thiệu bản thân</h2>
+      </div>
+
+      <div class="lesson-right">
+        <span class="lesson-progress"></span>
+        <div class="lesson-action" id="noteBtn">
+          <i class="fa-solid fa-note-sticky"></i>
+          <span>Ghi chú</span>
+        </div>
+        <div class="lesson-action">
+          <i class="fa-solid fa-question"></i>
+          <span>Hướng dẫn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KHỐI CHÍNH ===================== -->
+    <main class="lesson-layout">
+      <div class="left-column">
+        <div class="video-block"><div id="player"></div></div>
+        <div class="description-block">
+          <h3>Mô tả bài học</h3>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="search-box"><input type="text" placeholder="Tìm kiếm bài học..." /></div>
+        <div class="lesson-list"></div>
+      </div>
+    </main>
+
+    <!-- ===================== POPUP GHI CHÚ ===================== -->
+    <div id="noteOverlay" class="note-overlay hidden">
+      <div class="note-popup" id="notePopup">
+        <div class="note-header">
+          <h3>📝 Ghi chú</h3>
+          <button class="note-close">✖</button>
+        </div>
+
+        <div class="note-body">
+          <div class="note-editor">
+            <textarea class="note-textarea" placeholder="Nhập ghi chú mới..."></textarea>
+            <div class="note-actions">
+  <button type="button" class="note-save-btn">Lưu</button>
+<button type="button" class="note-delete-btn">Xóa</button>
+</div>
+          </div>
+          <div class="note-sidebar">
+            <h4>Danh sách ghi chú</h4>
+            <ul class="note-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="lesson-footer">
+  <div class="footer-center">
+    <button class="footer-btn prev-btn">⟨ Bài trước</button>
+    <button class="footer-btn next-btn">Bài kế ⟩</button>
+  </div>
+
+  <div class="footer-right">
+    <button class="footer-next-big">
+      <i class="fa-solid fa-forward"></i>
+      <span>Bài 2: Gia đình và bạn bè</span>
+    </button>
+  </div>
+</footer>
+
+    <!-- ===================== SCRIPT (SAU CÙNG) ===================== -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./assets/js/script.js" defer></script>
+<script src="./assets/js/notes.js" defer></script>
+  </body>
+</html>
