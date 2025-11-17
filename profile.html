@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang thông tin cá nhân</title>
+  <link rel="icon" type="image/png" href="./assets/img/bee.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/vars.css">
+  <link rel="stylesheet" href="./assets/css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/profile.css" />
+  <link rel="stylesheet" href="./assets/css/footer.css">
+  <link rel="stylesheet" href="./assets/css/scrollToTopBtn.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="left">
+        <img class="logo-img" src="./assets/img/bee.png" data-action="toggle-popup" data-target="#navMenu">
+        <ul class="dropdown-menu" id="navMenu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="courses.html">Lộ trình</a></li>
+          <li><a href="exams.html">Đề thi</a></li>
+        </ul>
+      </nav>
+
+      <nav class="right">
+        <ul>
+          <li><a href="my-courses.html">Khóa học của tôi</a></li>
+          <li>
+            <img class="user-img" src="./assets/img/user.png" data-action="toggle-popup" data-target="#userMenu">
+            <ul id="userMenu" class="user-menu">
+              <li><a href="profile.html">Thông tin cá nhân</a></li>
+              <li><a href="#">Đăng xuất</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left-column">
+      <div class="profile-card">
+        <img src="./assets/img/user.png" alt="Ảnh đại diện" class="profile-avatar" />
+        <h2 class="profile-name">Anna Nguyen</h2>
+        <p class="profile-email">anna.nguyen@example.com</p>
+
+        <div class="edit-box">
+          <i class="fa-regular fa-pen-to-square"></i>
+          <span>Sửa thông tin</span>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <h3>Tiến trình học tập</h3>
+        <div class="chart-wrap">
+          <canvas id="progressChart"></canvas>
+        </div>
+
+        <div id="detailBox" class="detail-box hidden">
+          <h4 id="detailTitle">Chi tiết kỹ năng</h4>
+          <ul id="detailList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="right-column">
+      <div class="attendance">
+        <div class="attendance-header">
+          <h3>Điểm chuyên cần</h3>
+          <select id="yearSelect"></select>
+        </div>
+
+        <div class="calendar-wrapper">
+          <div class="weekday-labels">
+            <span>Mon</span><span>Tue</span><span>Wed</span>
+            <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+
+          <div class="calendar-main">
+            <div class="month-labels" id="month-labels"></div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+          </div>
+        </div>
+        <div class="calendar-footer-legend">
+          <span class="legend-label">Ít hơn</span>
+
+          <div class="legend-scale">
+            <div class="legend-item" data-label="0 – Không có hoạt động">
+              <span class="day-cell level-0"></span>
+            </div>
+            <div class="legend-item" data-label="Ít">
+              <span class="day-cell level-1"></span>
+            </div>
+            <div class="legend-item" data-label="Trung bình">
+              <span class="day-cell level-2"></span>
+            </div>
+            <div class="legend-item" data-label="Nhiều">
+              <span class="day-cell level-3"></span>
+            </div>
+            <div class="legend-item" data-label="Rất nhiều">
+              <span class="day-cell level-4"></span>
+            </div>
+          </div>
+
+          <span class="legend-label">Nhiều hơn</span>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <h3>Hoạt động gần đây</h3>
+        <ul id="activityList" class="activity-list">
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Sửa thông tin cá nhân</h2>
+
+      <form id="editForm">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" value="Nguyễn Minh Hưng" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="minh.hung@example.com" required />
+
+        <label for="avatar">Ảnh đại diện:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*" />
+
+        <button type="submit" class="save-btn">Lưu thay đổi</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/utils.js"></script>
+
+  <script src="./assets/js/activity.js"></script>
+  <script src="./assets/js/calendar.js"></script>
+  <script src="./assets/js/progress.js"></script>
+  <script src="./assets/js/profile.js"></script>
+  <script src="./assets/js/autoHideNavBar.js" defer></script>
+</body>
+
+</html>

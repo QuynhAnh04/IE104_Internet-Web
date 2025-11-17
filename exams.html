@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề thi</title>
+    <link rel="icon" type="image/png" href="./assets/img/bee.png">
+
+    <link rel="stylesheet" href="./assets/css/vars.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/exams.css"> 
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/scrollToTopBtn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav class="left">
+                <img class="logo-img" src="./assets/img/bee.png">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="courses.html">Lộ trình</a></li>
+                    <li><a href="exams.html">Đề thi</a></li>
+                </ul>
+            </nav>
+
+            <nav class="right">
+                <ul>
+                    <li><a href="my-courses.html">Khóa học của tôi</a></li>
+                    <li>
+                        <img id="userIcon" class="user-img" src="./assets/img/user.png">
+                        <ul id="userMenu" class="user-menu">
+                            <li><a href="profile.html">Thông tin cá nhân</a></li>
+                            <li><a href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TOPBAR SEARCH + FILTER + LEVEL -->
+    <div class="exam-topbar">
+
+        <div class="exam-search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Tìm bài thi...">
+        </div>
+
+        <select class="exam-filter">
+            <option value="">Tất cả kỹ năng</option>
+            <option value="kanji">Kanji</option>
+            <option value="vocab">Từ vựng</option>
+            <option value="grammar">Ngữ pháp</option>
+            <option value="reading">Đọc hiểu</option>
+            <option value="listening">Nghe hiểu</option>
+        </select>
+
+        <div class="exam-levels">
+            <button class="level level-all active" data-level="ALL">Tất cả</button>
+            <button class="level" data-level="N5">N5</button>
+            <button class="level" data-level="N4">N4</button>
+            <button class="level" data-level="N3">N3</button>
+            <button class="level" data-level="N2">N2</button>
+            <button class="level" data-level="N1">N1</button>
+        </div>
+
+    </div>
+
+    <!-- SECTION ĐỂ JS RENDER -->
+    <div class="exam-sections"></div>
+
+
+    <!-- BOTTOM SHEET: CHI TIẾT ĐỀ THI -->
+<div id="examSheet" class="exam-sheet hidden">
+    <div class="exam-sheet-header">
+        <h2 id="sheetTitle"></h2>
+        <button id="sheetCloseBtn" class="sheet-close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="exam-sheet-body">
+        <div class="sheet-info">
+            <p><i class="fa-solid fa-layer-group"></i> <span id="sheetQuestions"></span></p>
+            <p><i class="fa-solid fa-clock"></i> <span id="sheetTime"></span></p>
+            <p><i class="fa-solid fa-user-group"></i> <span id="sheetTries"></span></p>
+            <p><i class="fa-solid fa-star"></i> <span id="sheetRating"></span></p>
+        </div>
+
+        <div class="sheet-description">
+            <h3>Mô tả bài thi</h3>
+            <p id="sheetDescription"></p>
+        </div>
+
+        <div class="sheet-content">
+            <h3>Nội dung bài thi</h3>
+            <ul id="sheetContentList"></ul>
+        </div>
+
+        <button id="sheetStartBtn" class="sheet-start-btn">
+            <i class="fa-solid fa-play"></i> Bắt đầu thi
+        </button>
+    </div>
+</div>
+
+
+<!-- LAYER NỀN MỜ -->
+<div id="sheetOverlay" class="sheet-overlay hidden"></div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col col-1">
+                <h6>BuzzUp</h6>
+                <p>Nền tảng học ngôn ngữ thế hệ mới, giúp bạn tự tin giao tiếp.</p>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="footer-col col-2">
+                <h6>Về BuzzUp</h6>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Cơ hội việc làm</a></li>
+                    <li><a href="#">Báo chí</a></li>
+                </ul>
+            </div>
+            <div class="footer-col col-3">
+                <h6>Hỗ trợ</h6>
+                <ul>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-col col-4">
+                <h6>Liên hệ</h6>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +123 456 789 10
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    contact@buzzup.com
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 BuzzUp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-btn">
+        <i class="fa-solid fa-circle-arrow-up"></i>
+    </button>
+
+    <script src="./assets/js/exams.js" defer></script>
+    <script src="./assets/js/scrollToTop.js" defer></script>
+    <script src="./assets/js/autoHideNavBar.js" defer></script>
+    <script src="./assets/js/popUp.js" defer></script>
+
+</body>
+</html>
