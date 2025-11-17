@@ -1,0 +1,517 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-brown: #3D322C;
+    --light-cream: #FFF5E5;
+    --white: #FFFFFF;
+    --yellow: #ffb800;
+    --yellow-dark: #e6a300;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin-top: 58px; /* header fixed cao ~58px */
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 1.5rem;
+}
+
+.container {
+    padding: 0 25px;
+}
+
+/* ====================================================================
+   HEADER (FIXED)
+   ==================================================================== */
+header {
+    background-color: var(--white);
+    font-size: 2rem;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+header .left,
+header .right {
+    display: flex;
+}
+
+header .left { gap: 30px; }
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header a {
+    color: var(--dark-brown);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0 24px;
+    font-weight: 600;
+    line-height: 46px;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 4px 0;
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    margin: 4px 0;
+}
+
+/* Dropdown user */
+.right ul li:last-child { position: relative; }
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    border-radius: 5px;
+    list-style-type: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.right li:hover .user-menu { display: block; }
+
+.user-menu a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+    display: block;
+}
+
+.user-menu li:hover a {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* ====================================================================
+   EXAM TOPBAR (SEARCH + FILTER + LEVEL)
+   ==================================================================== */
+
+.exam-topbar {
+    position: sticky;
+    top: 58px;      /* đúng chiều cao header */
+    z-index: 999;
+    background: #fff;
+    padding: 15px 25px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* Search box */
+.exam-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    padding: 8px 14px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.exam-search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Filter */
+.exam-filter {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Levels (N5 - N1) */
+.exam-levels {
+    display: flex;
+    gap: 8px;
+}
+
+.exam-levels .level {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.exam-levels .level:hover { background: #eaeaea; }
+
+.exam-levels .level.active {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: #fff;
+}
+
+/* ====================================================================
+   EXAM SECTIONS
+   ==================================================================== */
+
+.exam-sections {
+    padding: 25px 20px;
+}
+
+/* Title + "Xem thêm" inline */
+.exam-section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;          /* padding để nút không dính lề phải */
+    margin: 20px 0 10px;
+}
+
+.exam-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* "Xem thêm" inline button */
+.see-more-inline {
+    align-self: flex-end;
+    margin-right: 25px; /* giống padding container */
+    background: var(--yellow);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.see-more-inline:hover { background: var(--yellow-dark); }
+
+/* Exam rows (3 per line) */
+.exam-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* Exam Card */
+.exam-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.exam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+/* Card content */
+.exam-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.level-badge {
+    background: var(--yellow);
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.exam-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.exam-info {
+    margin: 12px 0;
+    color: #666;
+}
+
+.exam-info p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.exam-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.start-btn {
+    background: var(--yellow);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.start-btn:hover { background: var(--yellow-dark); }
+
+.rating { font-weight: 600; }
+
+/* ====================================================================
+   RESPONSIVE
+   ==================================================================== */
+
+@media (max-width: 768px) {
+    .exam-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====================================================================
+   FOOTER
+   ==================================================================== */
+
+.footer {
+    background-color: var(--dark-brown);
+    color: var(--light-cream);
+    padding: 50px 0 20px;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-col h6 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.footer-col p,
+.footer-col a {
+    font-size: 1.4rem;
+    color: var(--light-cream);
+    text-decoration: none;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-col ul {
+    list-style-type: none;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col .fa-brands {
+    font-size: 25px;
+    letter-spacing: 20px;
+    text-align: end;
+    margin-top: 20px;
+}
+
+.footer-col .fa-solid {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.footer-col .fa-facebook {
+    color: #435F9D;
+}
+
+.footer-col .fa-youtube {
+    color: #E32F11;
+}
+
+.footer-bottom {
+    text-align: left;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-left: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.3rem;
+    opacity: 0.7;
+}
+/* ====================================================================
+   SCROLL TO TOP BUTTON
+   ==================================================================== */
+
+.scroll-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.scroll-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-btn i {
+    font-size: 45px;
+    color: rgba(220, 220, 220, 0.8);
+}
+
+/* ========== BOTTOM SHEET (SUBSCREEN) ========== */
+
+/* ========== MODAL OVERLAY ========== */
+.sheet-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: .25s;
+    z-index: 2000;
+}
+
+.sheet-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========== MODAL (TRUNG TÂM MÀN HÌNH) ========== */
+.exam-sheet {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+
+    width: 540px;       /*  <-- tăng chiều rộng lên */
+    max-width: 95%;     /* chống tràn màn hình */
+    max-height: 85vh;
+
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    z-index: 2100;
+    transition: .25s ease;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.exam-sheet.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.exam-sheet.hidden {
+    display: none;
+}
+
+/* HEADER */
+.exam-sheet-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.sheet-close {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* BODY */
+.exam-sheet-body {
+    padding: 18px 20px;
+    overflow-y: auto;
+}
+
+/* START BUTTON */
+.sheet-start-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #ffb800;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sheet-start-btn:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-3px);  /* nhích lên nhẹ */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Hiệu ứng khi click */
+.sheet-start-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.sheet-content ul {
+    padding-left: 0;
+    list-style-position: inside;   /* icon bullet nằm trong vùng nội dung */
+}

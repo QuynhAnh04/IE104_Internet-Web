@@ -1,91 +1,147 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
-
-
-/* ==== RESET ==== */
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-/* ==== FIGMA SCALE WRAPPER ==== */
-.figma-wrapper {
-  width: 100vw;
-  height: 100vh;              /* 👈 full chiều cao màn hình */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background: #f9f9f9;
+:root {
+  --dark-brown: #3d322c;
+  --light-cream: #fff5e5;
+  --white: #ffffff;
 }
 
-.figma-frame {
+html {
+  font-size: 10px;
+}
+
+body {
+  margin-top: 58px;
+  font-family:
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+header {
+  background-color: var(--white);
+  font-size: 2rem;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1280px;          /* giữ khung gốc Figma, không scale */
-  min-height: 100vh;          /* 👈 full chiều cao */
-  background: #f9f9f9;
-  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* ==== NAVBAR ==== */
-.navbar {
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+header .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+header .left,
+header .right {
+  display: flex;
+}
+
+header .left {
+  gap: 30px;
+}
+
+header .left ul,
+header .right ul {
+  list-style-type: none;
+  display: flex;
   align-items: center;
-  height: 62px;
-  width: 100%;
-  background-color: #1e90ff;
+  gap: 30px;
 }
 
-.nav-item {
-  color: white;
-  font-size: clamp(14px, 1.2vw, 18px);
-  font-weight: 500;
-}
-
-.nav-item a {
-  color: white;
+header .left li a,
+header .right li a {
+  color: var(--dark-brown);
   text-decoration: none;
-  transition: color 0.3s;
+  font-size: 16px;
+  line-height: 46px;
+  padding: 0 24px;
+  font-weight: 600;
 }
 
-.nav-item a:hover {
-  color: #ffdd57;
-}
-
-.avatar {
-  width: clamp(30px, 3vw, 45px);
-  height: clamp(30px, 3vw, 45px);
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid white;
+header .left li:hover a,
+header .right li:hover a {
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
-.avatar:hover {
-  transform: scale(1.1);
+.header-user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--light-cream);
 }
 
-/* ==== BỐ CỤC 2 CỘT ==== */
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 4px 0;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  margin: 4px 0;
+}
+
+.right li:hover .user-menu {
+  display: block;
+}
+
+.right .user-menu li:hover a {
+  color: #000;
+  background-color: #ccc;
+}
+
+.right .user-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  list-style-type: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  min-width: 160px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.right .user-menu a {
+  color: #000;
+  padding: 0 12px;
+  line-height: 38px;
+  display: block;
+}
+
+.right ul li:last-child {
+  position: relative;
+}
+
 .container {
   display: grid;
-  grid-template-columns: 1fr 300px 866px 1fr; /* biên trái - cột trái - cột phải - biên phải */
-  column-gap: 17px; /* khoảng cách giữa hai cột và bằng biên */
+  grid-template-columns: 1fr 300px 866px 1fr; 
+  column-gap: 17px;
   align-items: flex-start;
   width: 100%;
   padding: 40px 0;
   box-sizing: border-box;
 }
 
-/* Gán vị trí cột */
 .left-column {
   grid-column: 2;
 }
@@ -104,7 +160,7 @@ html, body {
   justify-content: space-evenly;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  min-height: 100px;
+  height: 275px;
 }
 
 .profile-avatar {
@@ -146,14 +202,20 @@ html, body {
   height: 20px;
 }
 
-
-
 .attendance {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .attendance h3 {
@@ -161,6 +223,15 @@ html, body {
   margin-bottom: 15px;
   color: #222;
   font-weight: 600;
+}
+
+#yearSelect {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 /* ==== LỊCH ==== */
@@ -172,13 +243,16 @@ html, body {
 
 .weekday-labels {
   display: grid;
-  grid-template-rows: repeat(7, 1fr); /* 7 hàng ứng với 7 hàng của calendar-grid */
+  grid-template-rows: repeat(
+    7,
+    1fr
+  );
   row-gap: 3px;
-  align-items: center;                 /* căn giữa theo từng hàng */
+  align-items: center; 
   font-size: clamp(10px, 1vw, 12px);
   color: #666;
   height: auto;
-  margin-top: 22px; /* canh nhẹ với lưới */
+  margin-top: 22px;
 }
 
 .calendar-main {
@@ -202,10 +276,11 @@ html, body {
   display: grid;
   grid-template-columns: repeat(36, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  gap: 3px;
+  row-gap: 7px; 
+  column-gap: 3px;
   width: 100%;
   justify-items: center;
-  align-items: center; /* giúp ô vuông và label cùng baseline */
+  align-items: center; 
 }
 
 .day-cell {
@@ -216,10 +291,72 @@ html, body {
   transition: background-color 0.3s;
 }
 
-.day-cell.level-1 { background-color: #9be9a8; }
-.day-cell.level-2 { background-color: #40c463; }
-.day-cell.level-3 { background-color: #30a14e; }
-.day-cell.level-4 { background-color: #216e39; }
+.day-cell.level-1 {
+  background-color: #9be9a8;
+}
+.day-cell.level-2 {
+  background-color: #40c463;
+}
+.day-cell.level-3 {
+  background-color: #30a14e;
+}
+.day-cell.level-4 {
+  background-color: #216e39;
+}
+
+.calendar-footer-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.legend-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.legend-scale {
+  display: flex;
+  gap: 5px;
+}
+
+.legend-item {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.legend-item::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.legend-item:hover::after {
+  opacity: 1;
+}
+
+.legend-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
 
 /* ==== MODAL ==== */
 .modal {
@@ -249,8 +386,14 @@ html, body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .close-btn {
@@ -299,7 +442,6 @@ html, body {
   background-color: #187bcd;
 }
 
-/* ==== TIẾN TRÌNH HỌC ==== */
 .progress-card {
   margin-top: 20px;
   background-color: #fff;
@@ -308,6 +450,8 @@ html, body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: center;
+  height: auto;
+  min-height: auto;
 }
 
 .progress-card h3 {
@@ -317,9 +461,19 @@ html, body {
   font-weight: 600;
 }
 
-#progressChart {
+.chart-wrap {
   width: 100%;
-  height: 240px;
+  height: auto; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#progressChart {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 300px; 
 }
 
 .detail-box {
@@ -328,19 +482,19 @@ html, body {
   border-radius: 10px;
   padding: 12px;
   text-align: left;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s ease;
 }
-.detail-box.hidden { display: none; }
+.detail-box.hidden {
+  display: none;
+}
 
-
-/* ==== HOẠT ĐỘNG GẦN ĐÂY ==== */
 .activity-card {
   margin-top: 20px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -351,20 +505,18 @@ html, body {
   font-weight: 600;
 }
 
-/* ✅ Lưới 2 cột + Scroll */
 .activity-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px 20px;
   list-style: none;
   padding: 0;
-  max-height: 300px;       /* 👈 Chiều cao tối đa khối */
-  overflow-y: auto;        /* 👈 Cho phép cuộn dọc */
-  scrollbar-width: thin;   /* Firefox */
-  scrollbar-color: #1e90ff #f0f0f0; /* Firefox */
+  max-height: 300px; 
+  overflow-y: auto;
+  scrollbar-width: thin; 
+  scrollbar-color: #1e90ff #f0f0f0; 
 }
 
-/* 👇 Style thanh cuộn cho Chrome/Edge/Safari */
 .activity-list::-webkit-scrollbar {
   width: 8px;
 }
@@ -418,9 +570,16 @@ html, body {
   color: #666;
 }
 
-/* 📱 Responsive: dưới 900px quay lại 1 cột */
 @media (max-width: 900px) {
   .activity-list {
     grid-template-columns: 1fr;
   }
+}
+
+.attendance h3 {
+  margin-bottom: 0 !important;
+}
+
+.attendance-header {
+  margin-bottom: 6px !important;
 }

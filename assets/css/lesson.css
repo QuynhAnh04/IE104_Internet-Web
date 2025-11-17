@@ -136,7 +136,6 @@ header .right li:hover a {
     position: relative;
 }
 
-/*=== PAGE HEADER ===*/
 .page-header {
     color: var(--dark-brown);
     padding: 40px 60px;
@@ -157,8 +156,6 @@ header .right li:hover a {
     font-size: 1.4rem;
 }
 
-
-/* === THANH THÔNG TIN KHÓA HỌC === */
 .lesson-info {
   background: var(--dark-brown);
   color: var(--light-cream);
@@ -199,12 +196,11 @@ header .right li:hover a {
   filter: brightness(0) invert(1);
 }
 
-/* === KHỐI CHÍNH (VIDEO + DANH SÁCH) === */
 .lesson-layout {
   display: grid;
   grid-template-columns: 70% 30%;
-  width: 100vw;               /* chiếm toàn bộ chiều ngang */
-  height: calc(100vh - 54px - 65px); /* trừ header + thanh info (tùy header cao bao nhiêu) */
+  width: 100vw;             
+  height: calc(100vh - 54px - 65px); 
   border-top: none;
   border-bottom: 1px solid var(--gray-border);
 }
@@ -216,7 +212,7 @@ header .right li:hover a {
   flex-direction: column;
   border-right: 1px solid var(--gray-border);
   padding-bottom: 80px;
-  overflow-y: auto;     /* ⭐ Cho phép cột trái cuộn và không cắt mô tả */
+  overflow-y: auto;    
 }
 
 .video-block iframe {
@@ -228,7 +224,7 @@ header .right li:hover a {
   width: 100%;
   height: 500px;
   display: block;
-  background: #000; /* tạm thêm để dễ thấy vùng video */
+  background: #000; 
 }
 .description-block {
   padding: 20px 60px;
@@ -245,14 +241,12 @@ header .right li:hover a {
   color: #000;
 }
 
-/* --- CỘT PHẢI --- */
 .right-column {
   background: #fff;
   display: flex;
   flex-direction: column;
 }
 
-/* Thanh tìm kiếm */
 .search-box {
   display: flex;
   align-items: center;
@@ -270,13 +264,11 @@ header .right li:hover a {
   outline: none;
 }
 
-/* Danh sách bài học */
 .lesson-list {
   display: flex;
   flex-direction: column;
 }
 
-/* Bài học chính */
 .lesson-item {
   background: var(--gray-bg);
   border-bottom: 1px solid var(--gray-border);
@@ -352,7 +344,6 @@ header .right li:hover a {
   font-size: 1.6rem;
 }
 
-/* Scrollbar */
 .right-column::-webkit-scrollbar,
 .description-block::-webkit-scrollbar {
   width: 6px;
@@ -363,13 +354,6 @@ header .right li:hover a {
   border-radius: 3px;
 }
 
-
-/* =========================
-   📝 SUBSCREEN NOTE POPUP
-   ========================= */
-/* =========================
-   🧾 POPUP NOTE 2 CỘT
-   ========================= */
 .note-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -413,7 +397,6 @@ header .right li:hover a {
   height: 100%;
 }
 
-/* Cột trái (editor) */
 .note-editor {
   padding: 14px;
   display: flex;
@@ -491,9 +474,6 @@ header .right li:hover a {
   border-color: #c8bca5;
 }
 
-/* =====================
-   🧭 FOOTER ĐIỀU HƯỚNG
-   ===================== */
 .lesson-footer {
   background: var(--white);
   border-top: 1px solid var(--gray-border);
