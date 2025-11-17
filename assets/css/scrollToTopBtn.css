@@ -1,0 +1,25 @@
+.scroll-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 100;
+}
+
+.scroll-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-btn i {
+    width: 45px;
+    height: 45px;
+    font-size: 45px;
+    color: rgba(220, 220, 220, 0.8);
+    border-radius: 50%;
+}

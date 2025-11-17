@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài giảng – BuzzUp</title>
+    <link rel="icon" type="image/png" href="./assets/img/bee.png">
 
+    <link rel="stylesheet" href="./assets/css/vars.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/scrollToTopBtn.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -19,50 +24,24 @@
   </head>
 
   <body>
-    <header>
-      <div class="container">
-        <nav class="left">
-          <img class="logo-img" src="./assets/img/bee.png" />
-          <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="roadmap.html">Lộ trình</a></li>
-            <li><a href="#">Đề thi</a></li>
-          </ul>
-        </nav>
-
-        <nav class="right">
-          <ul>
-            <li><a href="#">Khóa học của tôi</a></li>
-            <li>
-              <img id="userIcon" class="user-img" src="./assets/img/user.png" />
-              <ul id="userMenu" class="user-menu">
-                <li><a href="#">Thông tin cá nhân</a></li>
-                <li><a href="#">Đăng xuất</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
     <section class="lesson-info">
       <div class="lesson-left">
-        <button class="back-btn">&lt;</button>
-        <h2 class="course-title">JLPT N5 – Bài 1: Giới thiệu bản thân</h2>
+        <button class="back-btn"><a href="course-detail.html"> &lt;</a></button>
+        <h2 class="course-title">N5 – Bài 1: Giới thiệu bản thân</h2>
       </div>
 
-      <div class="lesson-right">
-        <span class="lesson-progress"></span>
-        <div class="lesson-action" id="noteBtn">
-          <i class="fa-solid fa-note-sticky"></i>
-          <span>Ghi chú</span>
-        </div>
-        <div class="lesson-action">
-          <i class="fa-solid fa-question"></i>
-          <span>Hướng dẫn</span>
-        </div>
+    <div class="lesson-right">
+      <span class="lesson-progress"></span>
+      <div class="lesson-action" id="noteBtn">
+        <i class="fa-solid fa-note-sticky"></i>
+        <span>Ghi chú</span>
       </div>
-    </section>
+      <div class="lesson-action">
+        <i class="fa-solid fa-question"></i>
+        <span>Hướng dẫn</span>
+      </div>
+    </div>
+  </section>
 
     <main class="lesson-layout">
       <div class="left-column">
