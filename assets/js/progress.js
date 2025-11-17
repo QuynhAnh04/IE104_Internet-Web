@@ -162,12 +162,19 @@ function initProgressChart() {
   },
 
         tooltip: {
-          enabled: true,
-          bodyFont: { family: "Inter", size: 14 },
-          titleFont: { family: "Inter", size: 14 },
-          yAlign: "bottom",
-          displayColors: false
-        }
+  enabled: true,
+  bodyFont: { family: "Inter", size: 14 },
+  titleFont: { family: "Inter", size: 14 },
+  yAlign: "bottom",
+  displayColors: false,
+
+  callbacks: {
+    label: function (context) {
+      return context.label + ": " + context.parsed + "%";
+    }
+  }
+}
+
       }
     },
     plugins: [centerText, roundedGap]
