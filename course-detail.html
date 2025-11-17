@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Khóa học JLPT N5 trên BuzzUp">
-  <link rel="stylesheet" href="./vars.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/css/vars.css">
+  <link rel="stylesheet" href="./assets/css/style_thongtin.css">
   <title>Thông tin khóa học JLPT N5</title>
 </head>
 <body>
@@ -145,8 +145,15 @@
 
     <aside>
       <div clas="course-image"></div> 
-      <a href=""></a>
-      <button class="register-btn">ĐĂNG KÝ HỌC</button>
+      <!-- YouTube player container (thay cho iframe cũ) -->
+      <div id="player" style="width:560px;height:315px;background:#000;"></div>
+
+      <!-- Fallback message (ẩn) -->
+    <div id="player-fallback" style="display:none; width:560px; padding:20px; background:#222; color:#fff; text-align:center;">
+    <p style="margin:0 0 12px;">Video không thể phát trong trang này do cài đặt bật/tắt nhúng từ YouTube.</p>
+    <a id="open-on-youtube" href="https://www.youtube.com/playlist?list=PLbBhikLbVlB2oefhXhaUPxq8ECCjbgrx2" target="_blank" rel="noopener" style="display:inline-block; padding:10px 18px; background:#e52d27; color:#fff; text-decoration:none; border-radius:6px;">Mở playlist trên YouTube</a>
+    </div>
+    <button class="register-btn">ĐĂNG KÝ HỌC</button>
     </aside>
   </main>
 
