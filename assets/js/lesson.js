@@ -1,4 +1,3 @@
-// ========================= DỮ LIỆU =========================
 const lessonsData = [
   {
     id: 1,
@@ -29,7 +28,6 @@ let player;
 let watchInterval = null;
 let currentLesson = null;
 
-// ========================= RENDER DANH SÁCH =========================
 function renderLessons(list) {
   const container = document.querySelector(".lesson-list");
   container.innerHTML = "";
@@ -78,7 +76,6 @@ function renderLessons(list) {
   addSubLessonClickListeners();
 }
 
-// ========================= TOGGLE DANH SÁCH CON =========================
 function addToggleListeners() {
   document.querySelectorAll(".lesson-item-top").forEach((top) => {
     top.addEventListener("click", () => {
@@ -98,7 +95,6 @@ function addToggleListeners() {
   });
 }
 
-// ========================= CLICK BÀI HỌC CON =========================
 function addSubLessonClickListeners() {
   document.querySelectorAll(".sub-lesson").forEach((subDiv) => {
     subDiv.addEventListener("click", () => {
@@ -108,7 +104,6 @@ function addSubLessonClickListeners() {
 
   loadVideo(video.videoId);
 
-  // cập nhật mô tả bài học
   const descEl = document.querySelector(".description-block p");
   if (descEl)
       descEl.textContent = video.description || "Không có mô tả cho bài học này.";
@@ -119,7 +114,6 @@ function addSubLessonClickListeners() {
   });
 }
 
-// ========================= YOUTUBE API =========================
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     height: "500",
@@ -157,7 +151,6 @@ function checkProgress() {
   }
 }
 
-// ========================= CẬP NHẬT TIẾN ĐỘ =========================
 function markLessonDone(lessonId, subIdx) {
   const lesson = lessonsData.find((l) => l.id === lessonId);
   const sub = lesson.subLessons[subIdx];
@@ -180,7 +173,6 @@ function markLessonDone(lessonId, subIdx) {
 
 }
 
-// ========================= TÌM KIẾM =========================
 document.querySelector(".search-box input").addEventListener("input", (e) => {
   const keyword = e.target.value.toLowerCase();
   const filtered = lessonsData.filter(
@@ -191,7 +183,6 @@ document.querySelector(".search-box input").addEventListener("input", (e) => {
   renderLessons(filtered);
 });
 
-// ========================= POPUP GHI CHÚ =========================
 document.addEventListener("DOMContentLoaded", () => {
   renderLessons(lessonsData);
   updateGlobalProgress();
@@ -206,41 +197,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const noteInput = document.querySelector(".note-textarea");
   const noteList = document.querySelector(".note-list");
 
-  console.log("✅ noteInput:", noteInput);
+  console.log("noteInput:", noteInput);
 
-  // Mở popup
   noteBtn?.addEventListener("click", () => {
     noteOverlay.classList.remove("hidden");
     setTimeout(() => noteInput?.focus(), 200);
   });
 
-  // Đóng popup
   noteClose?.addEventListener("click", () => {
     noteOverlay.classList.add("hidden");
   });
 
-  // Lưu ghi chú
-//   saveBtn?.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     if (!noteInput) return alert("Không tìm thấy ô ghi chú!");
-//     const text = noteInput.value?.trim();
-//     console.log("📘 Text nhập:", text);
-
-//     if (!text || text.length === 0) return alert("❗Vui lòng nhập nội dung ghi chú");
-
-//     const time =
-//       player && typeof player.getCurrentTime === "function"
-//         ? player.getCurrentTime().toFixed(1)
-//         : 0;
-//     const vid =
-//       currentLesson &&
-//       lessonsData[currentLesson.lessonId - 1]?.subLessons[currentLesson.subIdx]?.videoId;
-
-//     if (typeof saveNoteDemo === "function") saveNoteDemo(text, time, vid);
-//     noteInput.value = "";
-//   });
-
-  // Kéo popup
   let isDragging = false,
     offsetX = 0,
     offsetY = 0;
@@ -267,14 +234,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 
-
-// ========================= FOOTER NAVIGATION =========================
 document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".prev-btn");
   const nextBtn = document.querySelector(".next-btn");
   const nextBigBtn = document.querySelector(".footer-next-big span");
 
-  // Cập nhật tiêu đề hiển thị
   function updateFooterDisplay() {
     if (!window.currentLesson) return;
     const { lessonId, subIdx } = window.currentLesson;
@@ -282,12 +246,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const lesson = lessonsData[mainIdx];
     const sub = lesson.subLessons[subIdx];
 
-    // Cập nhật tiêu đề trên thanh info
     const titleEl = document.querySelector(".course-title");
     if (titleEl)
       titleEl.textContent = `${lesson.title} – ${sub.title}`;
-
-    // Cập nhật nút "Bài lớn kế tiếp"
     if (lessonsData[mainIdx + 1]) {
       nextBigBtn.textContent = lessonsData[mainIdx + 1].title;
     } else {
@@ -295,7 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Xử lý khi click "Bài kế"
   nextBtn.addEventListener("click", () => {
     if (!window.currentLesson) return;
     let { lessonId, subIdx } = window.currentLesson;
@@ -303,10 +263,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const lesson = lessonsData[mainIdx];
 
     if (subIdx < lesson.subLessons.length - 1) {
-      // sang bài con kế
       subIdx++;
     } else if (mainIdx < lessonsData.length - 1) {
-      // sang bài lớn kế tiếp
       lessonId = lessonsData[mainIdx + 1].id;
       subIdx = 0;
     }
@@ -318,17 +276,14 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFooterDisplay();
   });
 
-  // Xử lý khi click "Bài trước"
   prevBtn.addEventListener("click", () => {
     if (!window.currentLesson) return;
     let { lessonId, subIdx } = window.currentLesson;
     const mainIdx = lessonsData.findIndex((l) => l.id === lessonId);
 
     if (subIdx > 0) {
-      // lùi bài con trước
       subIdx--;
     } else if (mainIdx > 0) {
-      // quay lại bài lớn trước
       lessonId = lessonsData[mainIdx - 1].id;
       const prevLesson = lessonsData[mainIdx - 1];
       subIdx = prevLesson.subLessons.length - 1;
@@ -341,26 +296,20 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFooterDisplay();
   });
 
-  // Khi khởi tạo, đặt mặc định
   setTimeout(() => updateFooterDisplay(), 800);
 });
 
-// ========================= CLICK "BÀI LỚN KẾ TIẾP" =========================
 document.querySelector(".footer-next-big").addEventListener("click", () => {
   if (!window.currentLesson) return;
   const { lessonId } = window.currentLesson;
   const mainIdx = lessonsData.findIndex((l) => l.id === lessonId);
   const nextLesson = lessonsData[mainIdx + 1];
-  if (!nextLesson) return; // nếu đã là bài cuối cùng thì không làm gì
+  if (!nextLesson) return; 
 
-  // chuyển sang bài học lớn tiếp theo, bài con đầu tiên
   window.currentLesson = { lessonId: nextLesson.id, subIdx: 0 };
-
-  // phát video đầu tiên của bài học lớn kế
   const firstVideoId = nextLesson.subLessons[0].videoId;
   loadVideo(firstVideoId);
 
-  // cập nhật tiêu đề hiển thị trên thanh thông tin và footer
   const titleEl = document.querySelector(".course-title");
   if (titleEl) titleEl.textContent = `${nextLesson.title} – ${nextLesson.subLessons[0].title}`;
   const nextBigBtn = document.querySelector(".footer-next-big span");
