@@ -1,0 +1,381 @@
+/* Global reset and vars */
+:root {
+  --p1: #3d322c;
+  --p2: #654534;
+  --p3: #d9b26e;
+  --p4: #ffebc7;
+  --p5: #fff5e5;
+  --gray: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif; /* Global font, fallback */
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* Header/Menu */
+header {
+  border-bottom: 1px solid var(--gray);
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 100px; /* Giảm lặp padding */
+}
+
+nav a {
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Main Content */
+main {
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Responsive grid */
+  gap: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 16px;
+}
+
+.course-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stat-item img {
+  width: 15px;
+  height: 15px;
+}
+
+.what-you-learn {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.what-you-learn ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.what-you-learn li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.what-you-learn li strong {
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-all {
+  cursor: pointer;
+  color: #000;
+  font-weight: 600;
+}
+
+details {
+  border-bottom: 1px solid var(--gray);
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.lesson {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sidebar */
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.course-image {
+  background: var(--gray);
+  border-radius: 10px;
+  height: 225px;
+}
+
+.register-btn {
+  background: var(--p1);
+  color: var(--p5);
+  padding: 10px 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: var(--p1);
+  color: var(--p5);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 387px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px 0;
+  
+}
+
+/* ===========================
+   Responsive Tablet (≤1024px)
+   =========================== */
+   @media (max-width: 1024px) {
+
+    nav ul {
+      gap: 40px; /* Giảm khoảng cách menu */
+    }
+  
+    main {
+      padding: 0 30px;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    .course-stats {
+      grid-template-columns: 1fr; /* Dồn lại một cột */
+    }
+  
+    .course-image {
+      height: 200px;
+    }
+  
+    .register-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+  
+  /* ===========================
+     Responsive Mobile (≤480px)
+     =========================== */
+  @media (max-width: 480px) {
+  
+    header {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    nav a {
+      font-size: 18px;
+    }
+  
+    .user-profile {
+      gap: 10px;
+      font-size: 16px;
+    }
+  
+    main {
+      grid-template-columns: 1fr;
+      padding: 0 15px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    p,
+    .what-you-learn li strong {
+      font-size: 14px;
+    }
+  
+    .course-stats {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    summary {
+      font-size: 16px;
+    }
+  
+    .lesson {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .course-image {
+      height: 180px;
+    }
+  
+    .register-btn {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    footer {
+      padding: 30px 20px;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-section {
+      max-width: 100%;
+    }
+  
+    .social-icons img {
+      width: 25px;
+      height: 25px;
+    }
+  }
