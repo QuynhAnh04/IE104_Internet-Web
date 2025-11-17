@@ -1,22 +1,21 @@
-/* Styles of your File */
-:root {
-  /* Colors */
-  --p1: #3d322c;
-  --p2: #654534;
-  --p3: #d9b26e;
-  --p4: #ffebc7;
-
-  /* Fonts */
-  /* Effects */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-/*Color Variables of your File */
-:root,
-[data-variable-collection-mode="mode-1"] {
-  /* mode-1 */
-  --p1: #3d322c;
-  --p2: #654534;
-  --p3: #d9b26e;
-  --p4: #ffebc7;
-  --p5: #fff5e5;
-  --xam: #d9d9d9;
+
+:root {
+    --p1: #3D322C;
+    --p2: #FFF5E5;
+}
+
+html {
+    font-size: clamp(7px, 0.4vw + 7.5px, 10px)
+}
+
+body {
+    margin-top: 58px;
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 1.5rem;
 }

@@ -6,26 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Khóa học JLPT N5 trên BuzzUp">
   <link rel="stylesheet" href="./assets/css/vars.css">
-  <link rel="stylesheet" href="./assets/css/style_thongtin.css">
+  <link rel="stylesheet" href="./assets/css/header.css">
+  <link rel="stylesheet" href="./assets/css/course-detail.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
+  <link rel="stylesheet" href="./assets/css/scrollToTopBtn.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Thông tin khóa học JLPT N5</title>
+  <link rel="icon" type="image/png" href="./assets/img/bee.png">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="./assets/icon/bee.png" alt="Logo BuzzUp" loading="lazy">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Trang chủ</a></li>
-        <li><a href="./roadmap.html">Lộ trình</a></li>
-        <li><a href="./index.html">Đề thi</a></li>
-      </ul>
-    </nav>
-    <div class="user-profile">
-      <span><a href="./khoahoc.html"></a>Khóa học của tôi</a></span>
-      <img src="./assets/icon/image.png" alt="Avatar người dùng" loading="lazy">
-    </div>
-  </header>
+        <div class="container">
+            <nav class="left">
+                <img class="logo-img" src="./assets/img/bee.png" data-action="toggle-popup" data-target="#navMenu">
+                <ul class="dropdown-menu" id="navMenu">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="courses.html">Lộ trình</a></li>
+                    <li><a href="exams.html">Đề thi</a></li>
+                </ul>
+            </nav>
+
+            <nav class="right">
+                <ul>
+                    <li><a href="my-courses.html">Khóa học của tôi</a></li>
+                    <li>
+                        <img class="user-img" src="./assets/img/user.png" data-action="toggle-popup" data-target="#userMenu">
+                        <ul id="userMenu" class="user-menu">
+                            <li><a href="profile.html">Thông tin cá nhân</a></li>
+                            <li><a href="#">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
 
   <main>
     <section class="course-info">
@@ -34,9 +49,9 @@
       
       <div class="course-stats">
         <div class="stat">
-          <div class="stat-item"><img src="./assets/icon/_3914759-10.png" alt="Icon bài học" loading="lazy"><span>Tổng số bài học</span></div>
-          <div class="stat-item"><img src="./assets/icon/_3917274-10.png" alt="Icon thời gian" loading="lazy"><span>Thời lượng</span></div>
-          <div class="stat-item"><img src="./assets/icon/_3917688-10.png" alt="Icon đối tượng" loading="lazy"><span>Đối tượng</span></div>
+          <div class="stat-item"><i class="fa-solid fa-book-open" alt="Icon bài học" loading="lazy"></i><span>Tổng số bài học</span></div>
+          <div class="stat-item"><i class="fa-regular fa-clock" alt="Icon thời gian" loading="lazy"></i><span>Thời lượng</span></div>
+          <div class="stat-item"><i class="fa-solid fa-user" alt="Icon đối tượng" loading="lazy"></i><span>Đối tượng</span></div>
         </div>
         <div class="stat">
           <p>150 bài học</p>
@@ -48,11 +63,11 @@
       <section class="what-you-learn">
         <h2>Bạn sẽ học được những gì?</h2>
         <ul>
-          <li><strong><img src="./assets/icon/check.svg" alt="Check icon" loading="lazy"> Kanji</strong><p>Nắm vững những chữ Hán cơ bản, dễ nhớ và áp dụng trong đời sống hằng ngày.</p></li>
-          <li><strong><img src="./assets/icon/check.svg" alt="Check icon" loading="lazy"> Từ vựng</strong><p>Xây dựng vốn từ theo chủ đề, phục vụ giao tiếp và đọc hiểu hiệu quả.</p></li>
-          <li><strong><img src="./assets/icon/check.svg" alt="Check icon" loading="lazy"> Ngữ pháp</strong><p>Hiểu và sử dụng được các mẫu câu chuẩn JLPT N5, tạo nền tảng vững chắc.</p></li>
-          <li><strong><img src="./assets/icon/check.svg" alt="Check icon" loading="lazy"> Đọc hiểu</strong><p>Rèn luyện khả năng đọc đoạn văn ngắn, nhận diện ý chính và chi tiết.</p></li>
-          <li><strong><img src="./assets/icon/check.svg" alt="Check icon" loading="lazy"> Nghe hiểu</strong><p>Làm quen với hội thoại cơ bản, cải thiện khả năng nghe - hiểu trong tình huống thực tế.</p></li>
+          <li><strong><i class="fa-solid fa-check" alt="Check icon" loading="lazy"></i> Kanji</strong><p>Nắm vững những chữ Hán cơ bản, dễ nhớ và áp dụng trong đời sống hằng ngày.</p></li>
+          <li><strong><i class="fa-solid fa-check" alt="Check icon" loading="lazy"></i> Từ vựng</strong><p>Xây dựng vốn từ theo chủ đề, phục vụ giao tiếp và đọc hiểu hiệu quả.</p></li>
+          <li><strong><i class="fa-solid fa-check" alt="Check icon" loading="lazy"></i> Ngữ pháp</strong><p>Hiểu và sử dụng được các mẫu câu chuẩn JLPT N5, tạo nền tảng vững chắc.</p></li>
+          <li><strong><i class="fa-solid fa-check" alt="Check icon" loading="lazy"></i> Đọc hiểu</strong><p>Rèn luyện khả năng đọc đoạn văn ngắn, nhận diện ý chính và chi tiết.</p></li>
+          <li><strong><i class="fa-solid fa-check" alt="Check icon" loading="lazy"></i> Nghe hiểu</strong><p>Làm quen với hội thoại cơ bản, cải thiện khả năng nghe - hiểu trong tình huống thực tế.</p></li>
         </ul>
       </section>
 
@@ -64,17 +79,17 @@
         </div>
         <details>
           <summary>Bảng chữ cái Hiragana <span>9 bài học</span></summary>
-          <div class="lesson-list">
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ あ(a) - か(ka) - さ(sa) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ た(ta) - な(na) - は(ha) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ ま(ma) - や(ya) - ら(ra) - わ(wa) - ん(n) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ た(ta) - な(na) - は(ha) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ が(ga) - ざ(za) - だ(da) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ ば(ba) - ぱ(pa), trường âm và âm ngắt (つ) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ きゃ(kya) - しゃ(sha) - ちゃ(cha) - にゃ(nya) - みゃ(mya) - ひゃ(hya) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Hàng chữ りゃ(rya) - ぎゃ(gya) - じゃ(ja) - びゃ(bya) - ぴゃ(pya) <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Học cách đếm số từ 1 - 10, luyện tập đếm số đơn giản <span>15:20</span></div>
-            <div class="lesson"><img src="./assets/icon/plus.svg" alt="Icon hira" loading="lazy">Ôn tập bảng Hiragana qua bài hát <span>15:20</span></div>
+          <div class="lesson-list"> 
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i><a href="lesson.html">Hàng chữ あ(a) - か(ka) - さ(sa) </a><span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ た(ta) - な(na) - は(ha) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ ま(ma) - や(ya) - ら(ra) - わ(wa) - ん(n) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ た(ta) - な(na) - は(ha) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ が(ga) - ざ(za) - だ(da) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ ば(ba) - ぱ(pa), trường âm và âm ngắt (つ) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ きゃ(kya) - しゃ(sha) - ちゃ(cha) - にゃ(nya) - みゃ(mya) - ひゃ(hya) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Hàng chữ りゃ(rya) - ぎゃ(gya) - じゃ(ja) - びゃ(bya) - ぴゃ(pya) <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Học cách đếm số từ 1 - 10, luyện tập đếm số đơn giản <span>15:20</span></div>
+            <div class="lesson"><i class="fa-solid fa-circle-play" alt="Icon hira" loading="lazy"></i>Ôn tập bảng Hiragana qua bài hát <span>15:20</span></div>
           </div>
         </details>
         <details>
@@ -157,30 +172,49 @@
     </aside>
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="logo"><img src="./assets/icon/bee.png" alt="Logo BuzzUp" loading="lazy"><h3>BuzzUp</h3></div>
-        <p>Nền tảng học tập linh hoạt, giúp bạn tiến bộ mỗi ngày.</p>
-        <div class="social-icons">
-          <img src="./assets/icon/facebook.svg" alt="Facebook" loading="lazy">
-          <img src="./assets/icon/youtube.svg" alt="YouTube" loading="lazy">
+  <footer class="footer">
+        <div class="container">
+            <div class="footer-col col-1">
+                <h6>BuzzUp</h6>
+                <p>Nền tảng học ngôn ngữ thế hệ mới, giúp bạn tự tin giao tiếp.</p>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="footer-col col-2">
+                <h6>Về BuzzUp</h6>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Cơ hội việc làm</a></li>
+                    <li><a href="#">Báo chí</a></li>
+                </ul>
+            </div>
+            <div class="footer-col col-3">
+                <h6>Hỗ trợ</h6>
+                <ul>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-col col-4">
+                <h6>Liên hệ</h6>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +123 456 789 10
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    contact@buzzup.com
+                </p>
+            </div>
         </div>
-      </div>
-      <div class="footer-section">
-        <h3>Về BuzzUp</h3>
-        <ul class="links">
-          <li>Giới thiệu</li>
-          <li>Điều khoản</li>
-          <li>Bảo mật</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <div class="contact-item"><img src="./assets/icon/phone.svg" alt="Phone icon" loading="lazy"> +123 456 789 10</div>
-        <div class="contact-item"><img src="./assets/icon/mail.svg" alt="Mail icon" loading="lazy"> contact@buzzup.com</div>
-      </div>
-    </div>
-    <div class="copyright">© 2025 BuzzUp. All rights reserved.</div>
-  </footer>
+        <div class="footer-bottom">
+            <p>© 2025 BuzzUp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-btn">
+        <i class="fa-solid fa-circle-arrow-up"></i>
+    </button>
 </body>
 </html>
