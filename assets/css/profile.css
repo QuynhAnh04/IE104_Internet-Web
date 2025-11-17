@@ -22,119 +22,9 @@ body {
   font-size: 1.5rem;
 }
 
-header {
-  background-color: var(--white);
-  font-size: 2rem;
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.header-hidden {
-  transform: translateY(-100%);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 20px;
-  border-bottom: 1px solid #ccc;
-}
-
-header .left,
-header .right {
-  display: flex;
-}
-
-header .left {
-  gap: 30px;
-}
-
-header .left ul,
-header .right ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-header .left li a,
-header .right li a {
-  color: var(--dark-brown);
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 46px;
-  padding: 0 24px;
-  font-weight: 600;
-}
-
-header .left li:hover a,
-header .right li:hover a {
-  cursor: pointer;
-}
-
-.header-user-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: var(--light-cream);
-}
-
-.user-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 4px 0;
-  cursor: pointer;
-  vertical-align: middle;
-}
-
-.logo-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10%;
-  margin: 4px 0;
-}
-
-.right li:hover .user-menu {
-  display: block;
-}
-
-.right .user-menu li:hover a {
-  color: #000;
-  background-color: #ccc;
-}
-
-.right .user-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #fff;
-  list-style-type: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  min-width: 160px;
-  border-radius: 5px;
-  z-index: 1;
-}
-
-.right .user-menu a {
-  color: #000;
-  padding: 0 12px;
-  line-height: 38px;
-  display: block;
-}
-
-.right ul li:last-child {
-  position: relative;
-}
-
 .container {
   display: grid;
-  grid-template-columns: 1fr 300px 866px 1fr; 
+  grid-template-columns: 1fr 300px 866px 1fr;
   column-gap: 17px;
   align-items: flex-start;
   width: 100%;
@@ -142,6 +32,9 @@ header .right li:hover a {
   box-sizing: border-box;
 }
 
+
+
+/* Gán vị trí cột */
 .left-column {
   grid-column: 2;
 }
@@ -160,6 +53,7 @@ header .right li:hover a {
   justify-content: space-evenly;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: clamp(300px, 10vw, 500px);
   height: 275px;
 }
 
@@ -212,8 +106,8 @@ header .right li:hover a {
 
 .attendance-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* ⭐ đẩy 2 phần cách xa nhau */
+  align-items: center; /* ⭐ canh giữa theo chiều dọc */
   width: 100%;
   margin-bottom: 10px;
 }
@@ -246,13 +140,13 @@ header .right li:hover a {
   grid-template-rows: repeat(
     7,
     1fr
-  );
+  ); /* 7 hàng ứng với 7 hàng của calendar-grid */
   row-gap: 3px;
-  align-items: center; 
+  align-items: center; /* căn giữa theo từng hàng */
   font-size: clamp(10px, 1vw, 12px);
   color: #666;
   height: auto;
-  margin-top: 22px;
+  margin-top: 22px; /* canh nhẹ với lưới */
 }
 
 .calendar-main {
@@ -276,12 +170,45 @@ header .right li:hover a {
   display: grid;
   grid-template-columns: repeat(36, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  row-gap: 7px; 
+  row-gap: 7px;
   column-gap: 3px;
   width: 100%;
   justify-items: center;
-  align-items: center; 
+  align-items: center;
+
+  /* ⭐ Thêm responsive auto-scale */
+  transform: scale(1);
+  transform-origin: top left;
 }
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .calendar-grid {
+    transform: scale(0.9);
+  }
+}
+
+/* Mobile lớn */
+@media (max-width: 900px) {
+  .calendar-grid {
+    transform: scale(0.8);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .calendar-grid {
+    transform: scale(0.68);
+  }
+}
+
+/* Điện thoại mini */
+@media (max-width: 420px) {
+  .calendar-grid {
+    transform: scale(0.58);
+  }
+}
+
 
 .day-cell {
   width: clamp(10px, 1.1vw, 15px);
@@ -448,10 +375,9 @@ header .right li:hover a {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
   text-align: center;
-  height: auto;
-  min-height: auto;
+  width: 300px;
+  height: 390px;
 }
 
 .progress-card h3 {
@@ -471,8 +397,8 @@ header .right li:hover a {
 }
 
 #progressChart {
-  width: 100% !important;
-  height: 100% !important;
+  width: 100% ;
+  height: 100%;
   max-width: 300px; 
 }
 
@@ -571,6 +497,24 @@ header .right li:hover a {
 }
 
 @media (max-width: 900px) {
+html {
+    font-size: 9px;
+  }
+  .container {
+    display: block;
+    justify-content: center;
+  }  
+
+  .profile-card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .progress-card {
+    width: 100%;
+  }
+
   .activity-list {
     grid-template-columns: 1fr;
   }
@@ -583,3 +527,4 @@ header .right li:hover a {
 .attendance-header {
   margin-bottom: 6px !important;
 }
+

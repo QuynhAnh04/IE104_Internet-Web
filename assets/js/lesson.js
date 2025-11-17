@@ -1,22 +1,24 @@
 const lessonsData = [
   {
     id: 1,
-    title: "Bài 1: Giới thiệu bản thân",
-    progress: "0 / 3 bài học",
-    duration: "14:20",
+    title: "Bài 1: Ngữ pháp N5",
+    progress: "0 / 5 bài học",
+    duration: "176:01",
     subLessons: [
-      { title: "Giới thiệu cơ bản", time: "05:20", done: false, videoId: "4DrfaWgGAYU", description: "Giới thiệu về bản thân bằng những mẫu câu đơn giản."},
-      { title: "Mẫu câu chào hỏi", time: "04:30", done: false, videoId: "lTRiuFIWV54" },
-      { title: "Tự giới thiệu ngắn", time: "04:30", done: false, videoId: "V-_O7nl0Ii0" },
+      { title: "Xin chào ! Tôi là Dũng Mori", time: "33:52", done: false, videoId: "s17fhLyurZY", description: "Giới thiệu về bản thân bằng những mẫu câu đơn giản."},
+      { title: "Đó là cái cặp của tôi", time: "13:57", done: false, videoId: "Mt_X1krAJp4", description: "Giới thiệu về bản thân bằng những mẫu câu đơn giản." },
+      { title: "Đây là trường học của tôi", time: "21:54", done: false, videoId: "Iol6CUEME2E", description: "Giới thiệu về bản thân bằng những mẫu câu đơn giản." },
+      { title: "Sáng nay, anh dậy lúc mấy giờ?", time: "47:13", done: false, videoId: "yQYzeVQ5KOM", description: "Giới thiệu về bản thân bằng những mẫu câu đơn giản." },
+      { title: "Hôm nay là sinh nhật của cô", time: "59:05", done: false, videoId: "nwZWNYQls4E", description: "Giới thiệu về bản thân bằng những mẫu câu đơn giản." },
     ],
   },
   {
     id: 2,
-    title: "Bài 2: Gia đình và bạn bè",
-    progress: "2 / 4 bài học",
+    title: "Bài 2: Bảng chữ cái tiếng Nhật",
+    progress: "0 / 4 bài học",
     duration: "18:05",
     subLessons: [
-      { title: "Từ vựng gia đình", time: "04:00", done: true, videoId: "YVv9gKJrHlc" },
+      { title: "Giới thiệu về Nhật Bản và bảng chữ cái tiếng Nhật", time: "25:38", done: false, videoId: "OxVQiowgBkI", description: "Làm quen với bảng chữ cái trong tiếng Nhật & đôi nét về xứ sở hoa anh đào" },
       { title: "Giới thiệu thành viên", time: "04:20", done: true, videoId: "GxldQ9eX2wo" },
       { title: "Nói về bạn bè", time: "05:00", done: false, videoId: "tgbNymZ7vqY" },
       { title: "Mẫu hội thoại", time: "04:45", done: false, videoId: "tgbNymZ7vqY" },
