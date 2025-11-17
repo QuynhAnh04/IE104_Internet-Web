@@ -227,7 +227,7 @@ function renderLevelSection(level) {
             ${showButton ? `
             <button class="see-more-inline" data-level="${level}">
                 ${expanded ? "Thu gọn" : "Xem thêm"}
-                <i class="fa-solid fa-forward"></i>
+                <i class="fa-solid ${expanded ? "fa-chevron-up" : "fa-chevron-down"}"></i>
             </button>` : ""}
         </div>
 
