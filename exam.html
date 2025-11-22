@@ -44,82 +44,364 @@
         </header>
 
         <main class="exam-sheet-body container">
-            <!-- TOPBAR -->
-            <div class="exam-topbar">
-                <div class="topbar-left">
-                    <h1 class="main-exam-title">Đề Thi Năng Lực Tiếng Nhật (JLPT) - N3 (Thử)</h1>
-                    <div class="exam-subtitle">語彙 - Từ vựng (問題1-12)</div>
+            <h1 class="main-exam-title">Đề Thi Năng Lực Tiếng Nhật (JLPT) - N3 (Thử)</h1>
+            <h3 class="exam-section-timer">Phần thi đang hoạt động...</h3>
+
+            <section id="goi">
+                <h2>語彙 - Từ vựng (問題1-12)</h2>
+
+                <div class="exam-question" data-question-id="1">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 1:</h5>
+                        <p class="question-text">山田さんがちらしを（　　）。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q1" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">ひろった</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q1" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">くばった</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q1" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">やぶった</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q1" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">貼った</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="topbar-right">
-                    <div id="examTimer" class="exam-timer">30:00</div>
-                    <div id="answeredCount" class="answered-count">Đã trả lời: 0 / 12</div>
+
+                <div class="exam-question" data-question-id="2">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 2:</h5>
+                        <p class="question-text">私の国は（　　）を輸入しています。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q2" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">石首</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q2" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">石油</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q2" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">石油</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q2" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">首油</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- LAYOUT: SIDEBAR + CONTENT -->
-            <div class="exam-layout">
-                <aside class="exam-sidebar">
-                    <h4>Danh sách câu</h4>
-                    <ul id="questionList" class="question-list"></ul>
-                    <div class="sidebar-legend">
-                        <span class="legend-item"><b></b> Chưa làm</span>
-                        <span class="legend-item"><b class="ok-legend"></b> Đúng</span>
-                        <span class="legend-item"><b class="wrong-legend"></b> Sai</span>
+                <div class="exam-question" data-question-id="3">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 3:</h5>
+                        <p class="question-text">卒業式には生徒の（　　）もたくさん来ていました。</p>
                     </div>
-                </aside>
-
-                <section id="goi" class="exam-content">
-                    <!-- ...existing questions... -->
-                    <h2 class="sr-only">語彙 - Từ vựng</h2>
-
-                    <div class="exam-question" data-question-id="1">
-                        <div class="question-header">
-                            <h5 class="question-number">Câu 1:</h5>
-                            <p class="question-text">山田さんがちらしを（　　）。</p>
-                        </div>
-                        <div class="question-options">
-                            <label class="option-label">
-                                <input type="radio" name="goi-q1" value="1">
-                                <span class="option-text">ひろった</span>
-                            </label>
-                            <label class="option-label">
-                                <input type="radio" name="goi-q1" value="2">
-                                <span class="option-text">くばった</span>
-                            </label>
-                            <label class="option-label">
-                                <input type="radio" name="goi-q1" value="3">
-                                <span class="option-text">やぶった</span>
-                            </label>
-                            <label class="option-label">
-                                <input type="radio" name="goi-q1" value="4">
-                                <span class="option-text">貼った</span>
-                            </label>
-                        </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q3" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">先生</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q3" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">友達</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q3" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">父母</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q3" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">兄弟</span>
+                        </label>
                     </div>
+                </div>
 
-                    <!-- ...other questions remain the same (2..12) - keep their existing HTML ... -->
-                    <!-- ...existing code... -->
-                    <div class="exam-question" data-question-id="2">
-                        <div class="question-header">
-                            <h5 class="question-number">Câu 2:</h5>
-                            <p class="question-text">私の国は（　　）を輸入しています。</p>
-                        </div>
-                        <div class="question-options">
-                            <label class="option-label"><input type="radio" name="goi-q2" value="1"><span class="option-text">石首</span></label>
-                            <label class="option-label"><input type="radio" name="goi-q2" value="2"><span class="option-text">石油</span></label>
-                            <label class="option-label"><input type="radio" name="goi-q2" value="3"><span class="option-text">石油</span></label>
-                            <label class="option-label"><input type="radio" name="goi-q2" value="4"><span class="option-text">首油</span></label>
-                        </div>
+                <div class="exam-question" data-question-id="4">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 4:</h5>
+                        <p class="question-text">この町の（　　）な産業は何ですか。</p>
                     </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q4" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">主要</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q4" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">重要</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q4" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">主な</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q4" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">大きい</span>
+                        </label>
+                    </div>
+                </div>
 
-                    <!-- (questions 3..12) -->
-                    <!-- ...existing code... -->
+                <div class="exam-question" data-question-id="5">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 5:</h5>
+                        <p class="question-text">これは（　　）して食べてください。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q5" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">冷やして</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q5" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">凍らせて</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q5" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">加熱して</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q5" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">切って</span>
+                        </label>
+                    </div>
+                </div>
 
-                </section>
-            </div>
+                <div class="exam-question" data-question-id="6">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 6:</h5>
+                        <p class="question-text">川はあの辺りで（　　）なっている。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q6" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">浅く</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q6" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">深く</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q6" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">広く</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q6" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">狭く</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exam-question" data-question-id="7">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 7:</h5>
+                        <p class="question-text">叱られて、つい（　　）になってしまった。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q7" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">静かに</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q7" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">怒って</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q7" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">驚いて</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q7" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">感情的に</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exam-question" data-question-id="8">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 8:</h5>
+                        <p class="question-text">これは（　　）残さないでください。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q8" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">残さないで</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q8" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">残して</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q8" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">食べる</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q8" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">捨てる</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exam-question" data-question-id="9">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 9:</h5>
+                        <p class="question-text">毎日（　　）勉強しなければなりません。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q9" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">少し</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q9" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">あまり</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q9" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">たくさん</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q9" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">ぜんぜん</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exam-question" data-question-id="10">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 10:</h5>
+                        <p class="question-text">彼はいつも（　　）で行動します。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q10" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">ゆっくり</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q10" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">積極的</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q10" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">消極的</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q10" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">静かに</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exam-question" data-question-id="11">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 11:</h5>
+                        <p class="question-text">この薬は食後（　　）飲んでください。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q11" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">前</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q11" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">中</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q11" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">と</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q11" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">に</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exam-question" data-question-id="12">
+                    <div class="question-header">
+                        <h5 class="question-number">Câu 12:</h5>
+                        <p class="question-text">最近、物価が（　　）上がっています。</p>
+                    </div>
+                    <div class="question-options">
+                        <label class="option-label">
+                            <input type="radio" name="goi-q12" value="1">
+                            <span class="option-design"></span>
+                            <span class="option-text">どんどん</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q12" value="2">
+                            <span class="option-design"></span>
+                            <span class="option-text">だんだん</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q12" value="3">
+                            <span class="option-design"></span>
+                            <span class="option-text">ずっと</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="goi-q12" value="4">
+                            <span class="option-design"></span>
+                            <span class="option-text">なかなか</span>
+                        </label>
+                    </div>
+                </div>
+
+            </section>
 
             <div class="submit-all-wrapper question-nav">
-                <button id="submitExamBtn" class="btn btn-primary next-question-btn">Nộp Bài</button>
+                <button class="btn btn-primary next-question-btn">Nộp Bài</button>
             </div>
         </main>
 
@@ -170,8 +452,7 @@
     </button>
     </div>
 
-    <!-- script: UI + timer + submit popup -->
-    <script src="./assets/js/exam.js"></script>
+    <script src="exam.js"></script>
 </body>
 
 </html>
