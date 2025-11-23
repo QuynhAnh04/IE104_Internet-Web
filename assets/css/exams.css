@@ -136,6 +136,26 @@ header a {
     border-bottom: 1px solid #eee;
 }
 
+/* Title on the left, timer on the right */
+.exam-topbar .topbar-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-exam-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+}
+
+.exam-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 6px;
+}
+
 /* Search box */
 .exam-search-bar {
     display: flex;
@@ -514,4 +534,211 @@ header a {
 .sheet-content ul {
     padding-left: 0;
     list-style-position: inside;   /* icon bullet nằm trong vùng nội dung */
+}
+
+/* Sidebar question list (remove default bullets and style numbers) */
+#questionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Ensure sidebar stays below header/topbar so first row is visible */
+.exam-sidebar {
+    position: sticky;
+    top: 140px; /* sits below fixed header + exam topbar; adjust if needed */
+    align-self: start;
+    padding-top: 6px;
+}
+
+/* Layout: sidebar + content side-by-side to avoid overlap */
+.exam-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.exam-sidebar {
+    width: max-content;
+    min-width: 60px;
+}
+
+.exam-content {
+    flex: 1 1 auto;
+}
+
+#questionList li {
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    background: #f3f3f3;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+#questionList li.active {
+    background: #3273dc; /* blue */
+    color: #fff;
+}
+
+#questionList li.answered {
+    background: var(--yellow);
+    color: #fff;
+}
+
+#questionList li.correct { box-shadow: 0 0 0 3px rgba(11,102,46,0.08); }
+#questionList li.incorrect { box-shadow: 0 0 0 3px rgba(155,42,42,0.06); }
+
+/* Timer and answered count */
+.exam-timer {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(180deg,#fff7e0,#fff1c7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #f0d38a;
+    color: #6b3f00;
+    text-align: center;
+    min-width: 84px;
+}
+
+.answered-count {
+    font-size: 1.4rem;
+    color: #555;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* Position timer + answered count fixed to top-right corner (desktop) */
+#examTimer {
+    position: fixed;
+    top: calc(58px + 12px); /* header (58px) + small offset */
+    right: 24px;
+    z-index: 1500;
+}
+
+#answeredCount {
+    position: fixed;
+    top: calc(58px + 56px);
+    right: 24px;
+    z-index: 1500;
+}
+
+@media (max-width: 768px) {
+    /* On small screens, keep timer inline to avoid covering content */
+    #examTimer, #answeredCount {
+        position: static;
+        top: auto;
+        right: auto;
+        margin-left: 12px;
+    }
+}
+
+/* Score modal (inline card placed after submit button) */
+#scoreModalOverlay {
+    display: block;
+    margin: 14px auto 0 auto;
+    width: 100%;
+    max-width: 760px;
+}
+
+#scoreModal {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#scoreModal h3 { margin: 0 0 8px 0; font-size: 2.0rem; }
+.score-num { font-size: 1.6rem; font-weight:700; margin-bottom:8px; }
+.score-detail { color: #666; margin-bottom:10px; }
+
+#scoreModal .btn { padding: 8px 18px; font-size: 1.6rem; }
+
+/* Question result highlight */
+.exam-question.correct { border-color: rgba(11,102,46,0.6); }
+.exam-question.incorrect { border-color: rgba(155,42,42,0.6); opacity: 0.98; }
+
+/* Make sure long text in options wraps and stays readable */
+.option-text { white-space: normal; }
+
+/* Highlight answer labels after grading */
+.option-label.correct {
+    background-color: #e9f8ee;
+    border-color: rgba(11,102,46,0.6);
+}
+.option-label.correct .option-design {
+    background-color: #0b662e;
+    border-color: #0b662e;
+}
+.option-label.correct::after {
+    content: "✓";
+    color: #0b662e;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.option-label.incorrect {
+    background-color: #fff4f4;
+    border-color: rgba(155,42,42,0.6);
+}
+.option-label.incorrect::after {
+    content: "✗";
+    color: #9b2a2a;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+/* Disabled inputs appear slightly faded */
+.option-label input[type="radio"]:disabled + .option-design {
+    opacity: 0.6;
+}
+
+/* =======================
+   PIN EXAM TITLE TOP-LEFT
+   ======================= */
+/* Move the main exam title to the top-left corner of the viewport so it overlays content. */
+.main-exam-title {
+    position: fixed;
+    top: calc(58px + 10px); /* below fixed header (58px) + small gap */
+    left: 16px;
+    z-index: 1600; /* above header/topbar elements */
+    background: rgba(255,255,255,0.95);
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    font-size: 2.2rem; /* slightly reduced to avoid overflow */
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .main-exam-title {
+        top: calc(58px + 6px);
+        left: 10px;
+        font-size: 1.8rem;
+        padding: 4px 8px;
+    }
+}
+
+/* When title is pinned, ensure the topbar left column doesn't reserve conflicting space */
+.exam-topbar .topbar-left { padding-left: 0; }
+
+/* Ensure exam content is pushed down so first question isn't covered by fixed title */
+.exam-content {
+    padding-top: 64px; /* space for fixed title + small gap; adjust if necessary */
+}
+
+@media (max-width: 768px) {
+    .exam-content { padding-top: 48px; }
 }
