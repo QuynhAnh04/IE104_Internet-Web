@@ -742,3 +742,107 @@ header a {
 @media (max-width: 768px) {
     .exam-content { padding-top: 48px; }
 }
+
+/* ==========================
+   RESPONSIVE ADJUSTMENTS
+   ========================== */
+@media (max-width: 1024px) {
+    /* Stack layout vertically on tablet and below */
+    .exam-layout {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Make sidebar full-width and flow above content */
+    .exam-sidebar {
+        position: static;
+        top: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 0;
+        margin-bottom: 8px;
+    }
+
+    /* Question list should left-align and wrap naturally */
+    #questionList {
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    /* Keep topbar compact */
+    .exam-topbar {
+        padding: 12px;
+        align-items: center;
+    }
+
+    .topbar-right {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    /* timer inline instead of fixed on medium screens */
+    #examTimer, #answeredCount {
+        position: static;
+        top: auto;
+        right: auto;
+        margin: 4px 0 0 0;
+    }
+
+    .main-exam-title { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+    /* On phones, unpin the title and keep the topbar flow natural */
+    .main-exam-title {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        font-size: 1.6rem;
+    }
+
+    /* Remove extra top padding when title is not fixed */
+    .exam-content { padding-top: 0; }
+
+    .exam-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 10px;
+    }
+
+    /* Make option list vertical and easier to tap */
+    .question-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .option-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #f0f0f0;
+    }
+
+    /* Slightly smaller question pills to fit mobile */
+    #questionList li {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 1.2rem;
+    }
+
+    /* Improve question spacing on mobile */
+    .exam-question { margin-bottom: 14px; padding: 12px; border-radius: 10px; border: 1px solid #f3f3f3; }
+}
+
+/* Accessible focus state for keyboard users */
+#questionList li:focus { outline: 3px solid rgba(50,115,220,0.18); }
+
