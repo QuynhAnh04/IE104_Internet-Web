@@ -52,6 +52,27 @@ header .container {
     padding: 5px 20px;
 }
 
+/* Prevent large headings from breaking layout when user zooms */
+header .left, .exam-topbar .topbar-left {
+    min-width: 0; /* allow children to shrink inside flex container */
+}
+
+/* Apply safe scaling and ellipsis to main titles so they do not wrap into multiple lines */
+.main-exam-title,
+.exam-title,
+.page-title,
+header .container h1 {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(1.6rem, 2.6vw, 3.2rem);
+}
+
+/* Ensure logo and user avatar don't grow disproportionately when zooming */
+.logo-img { max-width: 80px; max-height: 80px; }
+.user-img { max-width: 56px; max-height: 56px; }
+
 header .left,
 header .right {
     display: flex;
@@ -718,7 +739,11 @@ header a {
     padding: 6px 10px;
     border-radius: 6px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    font-size: 2.2rem; /* slightly reduced to avoid overflow */
+    font-size: clamp(1.8rem, 2.2rem, 3rem); /* responsive cap */
+    max-width: calc(100vw - 160px); /* keep away from right-side controls */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     line-height: 1.2;
 }
 
@@ -736,7 +761,7 @@ header a {
 
 /* Ensure exam content is pushed down so first question isn't covered by fixed title */
 .exam-content {
-    padding-top: 64px; /* space for fixed title + small gap; adjust if necessary */
+    padding-top: 96px; /* space for fixed title + small gap; increased to handle larger font zoom */
 }
 
 @media (max-width: 768px) {
@@ -793,6 +818,14 @@ header a {
     }
 
     .main-exam-title { font-size: 2rem; }
+    /* slightly reduce reserved top spacing on medium screens */
+    .exam-content { padding-top: 80px; }
+    .exam-topbar { padding-left: 20px; }
+}
+
+/* Reserve left padding on wide screens so pinned title doesn't overlap topbar content */
+@media (min-width: 1025px) {
+    .exam-topbar { padding-left: 160px; }
 }
 
 @media (max-width: 768px) {
